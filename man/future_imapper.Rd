@@ -2,10 +2,13 @@
 % Please edit documentation in R/future_imapper.R
 \name{future_imapper}
 \alias{future_imapper}
-\title{MAPping in Parallel and Ending parallel mapping \code{furrr} in R}
+\title{imapping in Parallel and Ending parallel imapping \code{furrr} in R}
+\usage{
+future_imapper(...)
+}
 \arguments{
 \item{workers}{default parallel workers are detectCores()-2}
 }
 \description{
-MAPping in Parallel and Ending parallel mapping \code{furrr} in R
+imapping in Parallel and Ending parallel imapping \code{furrr} in R
 }

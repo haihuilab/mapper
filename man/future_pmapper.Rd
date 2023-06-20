@@ -3,6 +3,9 @@
 \name{future_pmapper}
 \alias{future_pmapper}
 \title{MAPping in Parallel and Ending parallel mapping \code{furrr} in R}
+\usage{
+future_pmapper(...)
+}
 \arguments{
 \item{workers}{default parallel workers are detectCores()-2}
 }

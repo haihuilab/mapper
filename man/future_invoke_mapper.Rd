@@ -2,10 +2,13 @@
 % Please edit documentation in R/future_invoke_mapper.R
 \name{future_invoke_mapper}
 \alias{future_invoke_mapper}
-\title{MAPping in Parallel and Ending parallel mapping \code{furrr} in R}
+\title{invoke_mapping in Parallel and Ending parallel invoke_mapping \code{furrr} in R}
+\usage{
+future_invoke_mapper(...)
+}
 \arguments{
 \item{workers}{default parallel workers are detectCores()-2}
 }
 \description{
-MAPping in Parallel and Ending parallel mapping \code{furrr} in R
+invoke_mapping in Parallel and Ending parallel invoke_mapping \code{furrr} in R
 }
