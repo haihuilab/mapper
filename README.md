@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Custom Theme for Publication (thepubr)
+# MAPping in Parallel and Ending parallel mapping `furrr` in R (mapper)
 
 <!-- badges: start -->
 <!-- badges: end -->
