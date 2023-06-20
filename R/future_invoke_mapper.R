@@ -1,7 +1,7 @@
 #' MAPping in Parallel and Ending parallel mapping `furrr` in R
 #'
 #' @param workers default parallel workers are detectCores()-2
-#' @name map_func
+#' @name future_invoke_mapper
 #' @export
 library(parallel)
 library(purrr)
