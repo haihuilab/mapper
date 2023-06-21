@@ -57,51 +57,13 @@ future_mapper_template <- function(...) {
   list2env(func_list, envir = .GlobalEnv)
 }
 
-#' future_invoke_mapper
-#' @rdname future_mapper
+#' future_mapper
+#' @param ... Input parameter
+#' @return Output result
+#' @name future_mapper
 #' @export
-future_mapper <- future_mapper_template()
+future_mapper <- function(...) {
+  future_mapper_template()
+}
 
-#' future_invoke_mapper_chr
-#' @rdname future_mapper_chr
-#' @export
-future_mapper_chr <- future_mapper_template()
-
-#' future_invoke_mapper_dbl
-#' @rdname future_mapper_dbl
-#' @export
-future_mapper_dbl <- future_mapper_template()
-
-#' future_invoke_mapper_dfc
-#' @rdname future_mapper_dfc
-#' @export
-future_mapper_dfc <- future_mapper_template()
-
-#' future_invoke_mapper_dfr
-#' @rdname future_mapper_dfr
-#' @export
-future_mapper_dfr <- future_mapper_template()
-
-#' future_invoke_mapper_int
-#' @rdname future_mapper_int
-#' @export
-future_mapper_int <- future_mapper_template()
-
-#' future_invoke_mapper_lgl
-#' @rdname future_mapper_lgl
-#' @export
-future_mapper_lgl <- future_mapper_template()
-
-#' future_invoke_mapper_walk
-#' @rdname future_mapper_walk
-#' @export
-future_mapper_walk <- future_mapper_template()
-
-# Example
-# library(tidyverse)
-# library(furrr)
-# # Remove cache when using furrr:map functions
-# 1:10 %>%
-#   future_mapper(rnorm, n = 10, .options = furrr_options(seed = 1233)) %>%
-#   future_map_dbl(mean)
 
