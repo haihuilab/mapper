@@ -30,7 +30,7 @@ future_mapper <- function(...) {
                    "future_mapper_dfr",
                    "future_mapper_int",
                    "future_mapper_lgl",
-                   "future_mapper_pwalk")
+                   "future_mapper_walk")
 
 
   # map function------------------------
@@ -80,7 +80,7 @@ future_mapper_chr <- function(...) {
                    "future_mapper_dfr",
                    "future_mapper_int",
                    "future_mapper_lgl",
-                   "future_mapper_pwalk")
+                   "future_mapper_walk")
 
 
   # map function------------------------
@@ -130,7 +130,7 @@ future_mapper_dbl <- function(...) {
                    "future_mapper_dfr",
                    "future_mapper_int",
                    "future_mapper_lgl",
-                   "future_mapper_pwalk")
+                   "future_mapper_walk")
 
 
   # 2. future_mapper_chr:future_map_chr------------------------
@@ -180,7 +180,7 @@ future_mapper_dfc <- function(...) {
                    "future_mapper_dfr",
                    "future_mapper_int",
                    "future_mapper_lgl",
-                   "future_mapper_pwalk")
+                   "future_mapper_walk")
 
 
   # 2. future_mapper_chr:future_map_chr------------------------
@@ -230,7 +230,7 @@ future_mapper_dfr <- function(...) {
                    "future_mapper_dfr",
                    "future_mapper_int",
                    "future_mapper_lgl",
-                   "future_mapper_pwalk")
+                   "future_mapper_walk")
 
 
   # 2. future_mapper_chr:future_map_chr------------------------
@@ -280,7 +280,7 @@ future_mapper_int <- function(...) {
                    "future_mapper_dfr",
                    "future_mapper_int",
                    "future_mapper_lgl",
-                   "future_mapper_pwalk")
+                   "future_mapper_walk")
 
 
   # 2. future_mapper_chr:future_map_chr------------------------
@@ -330,7 +330,7 @@ future_mapper_lgl <- function(...) {
                    "future_mapper_dfr",
                    "future_mapper_int",
                    "future_mapper_lgl",
-                   "future_mapper_pwalk")
+                   "future_mapper_walk")
 
 
   # 2. future_mapper_chr:future_map_chr------------------------
@@ -360,10 +360,10 @@ future_mapper_lgl <- function(...) {
 }
 
 
-# 8. future_mapper_pwalk:future_walk------------------------
-#' @rdname future_mapper_pwalk
+# 8. future_mapper_walk:future_walk------------------------
+#' @rdname future_mapper_walk
 #' @export
-future_mapper_pwalk <- function(...) {
+future_mapper_walk <- function(...) {
   map_list <- c(future_map,
                 future_map_chr,
                 future_map_dbl,
@@ -371,7 +371,7 @@ future_mapper_pwalk <- function(...) {
                 future_map_dfr,
                 future_map_int,
                 future_map_lgl,
-                future_pwalk)
+                future_walk)
 
   mapper_list <- c("future_mapper",
                    "future_mapper_chr",
@@ -380,7 +380,7 @@ future_mapper_pwalk <- function(...) {
                    "future_mapper_dfr",
                    "future_mapper_int",
                    "future_mapper_lgl",
-                   "future_mapper_pwalk")
+                   "future_mapper_walk")
 
 
   # 2. future_mapper_chr:future_map_chr------------------------

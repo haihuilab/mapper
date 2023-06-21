@@ -20,8 +20,7 @@ future_invoke_mapper <- function(...) {
                 future_invoke_map_dfc,
                 future_invoke_map_dfr,
                 future_invoke_map_int,
-                future_invoke_map_lgl,
-                future_walk)
+                future_invoke_map_lgl)
 
   invoke_mapper_list <- c("future_invoke_mapper",
                    "future_invoke_mapper_chr",
@@ -29,8 +28,7 @@ future_invoke_mapper <- function(...) {
                    "future_invoke_mapper_dfc",
                    "future_invoke_mapper_dfr",
                    "future_invoke_mapper_int",
-                   "future_invoke_mapper_lgl",
-                   "future_invoke_mapper_pwalk")
+                   "future_invoke_mapper_lgl")
 
 
   # invoke_map function------------------------
@@ -70,8 +68,7 @@ future_invoke_mapper_chr <- function(...) {
                 future_invoke_map_dfc,
                 future_invoke_map_dfr,
                 future_invoke_map_int,
-                future_invoke_map_lgl,
-                future_iwalk)
+                future_invoke_map_lgl)
 
   invoke_mapper_list <- c("future_invoke_mapper",
                    "future_invoke_mapper_chr",
@@ -79,8 +76,7 @@ future_invoke_mapper_chr <- function(...) {
                    "future_invoke_mapper_dfc",
                    "future_invoke_mapper_dfr",
                    "future_invoke_mapper_int",
-                   "future_invoke_mapper_lgl",
-                   "future_invoke_mapper_pwalk")
+                   "future_invoke_mapper_lgl")
 
 
   # invoke_map function------------------------
@@ -120,8 +116,7 @@ future_invoke_mapper_dbl <- function(...) {
                 future_invoke_map_dfc,
                 future_invoke_map_dfr,
                 future_invoke_map_int,
-                future_invoke_map_lgl,
-                future_iwalk)
+                future_invoke_map_lgl)
 
   invoke_mapper_list <- c("future_invoke_mapper",
                    "future_invoke_mapper_chr",
@@ -129,8 +124,7 @@ future_invoke_mapper_dbl <- function(...) {
                    "future_invoke_mapper_dfc",
                    "future_invoke_mapper_dfr",
                    "future_invoke_mapper_int",
-                   "future_invoke_mapper_lgl",
-                   "future_invoke_mapper_pwalk")
+                   "future_invoke_mapper_lgl")
 
 
   # 2. future_invoke_mapper_chr:future_invoke_map_chr------------------------
@@ -170,8 +164,7 @@ future_invoke_mapper_dfc <- function(...) {
                 future_invoke_map_dfc,
                 future_invoke_map_dfr,
                 future_invoke_map_int,
-                future_invoke_map_lgl,
-                future_iwalk)
+                future_invoke_map_lgl)
 
   invoke_mapper_list <- c("future_invoke_mapper",
                    "future_invoke_mapper_chr",
@@ -179,8 +172,7 @@ future_invoke_mapper_dfc <- function(...) {
                    "future_invoke_mapper_dfc",
                    "future_invoke_mapper_dfr",
                    "future_invoke_mapper_int",
-                   "future_invoke_mapper_lgl",
-                   "future_invoke_mapper_pwalk")
+                   "future_invoke_mapper_lgl")
 
 
   # 2. future_invoke_mapper_chr:future_invoke_map_chr------------------------
@@ -220,8 +212,7 @@ future_invoke_mapper_dfr <- function(...) {
                 future_invoke_map_dfc,
                 future_invoke_map_dfr,
                 future_invoke_map_int,
-                future_invoke_map_lgl,
-                future_iwalk)
+                future_invoke_map_lgl)
 
   invoke_mapper_list <- c("future_invoke_mapper",
                    "future_invoke_mapper_chr",
@@ -229,8 +220,7 @@ future_invoke_mapper_dfr <- function(...) {
                    "future_invoke_mapper_dfc",
                    "future_invoke_mapper_dfr",
                    "future_invoke_mapper_int",
-                   "future_invoke_mapper_lgl",
-                   "future_invoke_mapper_pwalk")
+                   "future_invoke_mapper_lgl")
 
 
   # 2. future_invoke_mapper_chr:future_invoke_map_chr------------------------
@@ -270,8 +260,7 @@ future_invoke_mapper_int <- function(...) {
                 future_invoke_map_dfc,
                 future_invoke_map_dfr,
                 future_invoke_map_int,
-                future_invoke_map_lgl,
-                future_iwalk)
+                future_invoke_map_lgl)
 
   invoke_mapper_list <- c("future_invoke_mapper",
                    "future_invoke_mapper_chr",
@@ -279,8 +268,7 @@ future_invoke_mapper_int <- function(...) {
                    "future_invoke_mapper_dfc",
                    "future_invoke_mapper_dfr",
                    "future_invoke_mapper_int",
-                   "future_invoke_mapper_lgl",
-                   "future_invoke_mapper_pwalk")
+                   "future_invoke_mapper_lgl")
 
 
   # 2. future_invoke_mapper_chr:future_invoke_map_chr------------------------
@@ -320,8 +308,7 @@ future_invoke_mapper_lgl <- function(...) {
                 future_invoke_map_dfc,
                 future_invoke_map_dfr,
                 future_invoke_map_int,
-                future_invoke_map_lgl,
-                future_iwalk)
+                future_invoke_map_lgl)
 
   invoke_mapper_list <- c("future_invoke_mapper",
                    "future_invoke_mapper_chr",
@@ -329,8 +316,7 @@ future_invoke_mapper_lgl <- function(...) {
                    "future_invoke_mapper_dfc",
                    "future_invoke_mapper_dfr",
                    "future_invoke_mapper_int",
-                   "future_invoke_mapper_lgl",
-                   "future_invoke_mapper_pwalk")
+                   "future_invoke_mapper_lgl")
 
 
   # 2. future_invoke_mapper_chr:future_invoke_map_chr------------------------
@@ -370,8 +356,7 @@ future_invoke_mapper_pwalk <- function(...) {
                 future_invoke_map_dfc,
                 future_invoke_map_dfr,
                 future_invoke_map_int,
-                future_invoke_map_lgl,
-                future_pwalk)
+                future_invoke_map_lgl)
 
   invoke_mapper_list <- c("future_invoke_mapper",
                    "future_invoke_mapper_chr",
@@ -379,8 +364,7 @@ future_invoke_mapper_pwalk <- function(...) {
                    "future_invoke_mapper_dfc",
                    "future_invoke_mapper_dfr",
                    "future_invoke_mapper_int",
-                   "future_invoke_mapper_lgl",
-                   "future_invoke_mapper_pwalk")
+                   "future_invoke_mapper_lgl")
 
 
   # 2. future_invoke_mapper_chr:future_invoke_map_chr------------------------

@@ -14,14 +14,13 @@
 #' @rdname future_imapper
 #' @export
 future_imapper <- function(...) {
-  imap_list <- c(future_iimap,
+  imap_list <- c(future_imap,
                        future_imap_chr,
                        future_imap_dbl,
                        future_imap_dfc,
                        future_imap_dfr,
                        future_imap_int,
-                       future_imap_lgl,
-                       future_walk)
+                       future_imap_lgl)
 
   imapper_list <- c("future_imapper",
                           "future_imapper_chr",
@@ -29,8 +28,7 @@ future_imapper <- function(...) {
                           "future_imapper_dfc",
                           "future_imapper_dfr",
                           "future_imapper_int",
-                          "future_imapper_lgl",
-                          "future_imapper_pwalk")
+                          "future_imapper_lgl")
 
 
   # imap function------------------------
@@ -70,8 +68,7 @@ future_imapper_chr <- function(...) {
                        future_imap_dfc,
                        future_imap_dfr,
                        future_imap_int,
-                       future_imap_lgl,
-                       future_iwalk)
+                       future_imap_lgl)
 
   imapper_list <- c("future_imapper",
                           "future_imapper_chr",
@@ -79,8 +76,7 @@ future_imapper_chr <- function(...) {
                           "future_imapper_dfc",
                           "future_imapper_dfr",
                           "future_imapper_int",
-                          "future_imapper_lgl",
-                          "future_imapper_pwalk")
+                          "future_imapper_lgl",)
 
 
   # imap function------------------------
@@ -120,8 +116,7 @@ future_imapper_dbl <- function(...) {
                        future_imap_dfc,
                        future_imap_dfr,
                        future_imap_int,
-                       future_imap_lgl,
-                       future_iwalk)
+                       future_imap_lgl)
 
   imapper_list <- c("future_imapper",
                           "future_imapper_chr",
@@ -129,8 +124,7 @@ future_imapper_dbl <- function(...) {
                           "future_imapper_dfc",
                           "future_imapper_dfr",
                           "future_imapper_int",
-                          "future_imapper_lgl",
-                          "future_imapper_pwalk")
+                          "future_imapper_lgl")
 
 
   # 2. future_imapper_chr:future_imap_chr------------------------
@@ -170,8 +164,7 @@ future_imapper_dfc <- function(...) {
                        future_imap_dfc,
                        future_imap_dfr,
                        future_imap_int,
-                       future_imap_lgl,
-                       future_iwalk)
+                       future_imap_lgl)
 
   imapper_list <- c("future_imapper",
                           "future_imapper_chr",
@@ -179,8 +172,7 @@ future_imapper_dfc <- function(...) {
                           "future_imapper_dfc",
                           "future_imapper_dfr",
                           "future_imapper_int",
-                          "future_imapper_lgl",
-                          "future_imapper_pwalk")
+                          "future_imapper_lgl")
 
 
   # 2. future_imapper_chr:future_imap_chr------------------------
@@ -220,8 +212,7 @@ future_imapper_dfr <- function(...) {
                        future_imap_dfc,
                        future_imap_dfr,
                        future_imap_int,
-                       future_imap_lgl,
-                       future_iwalk)
+                       future_imap_lgl)
 
   imapper_list <- c("future_imapper",
                           "future_imapper_chr",
@@ -229,8 +220,7 @@ future_imapper_dfr <- function(...) {
                           "future_imapper_dfc",
                           "future_imapper_dfr",
                           "future_imapper_int",
-                          "future_imapper_lgl",
-                          "future_imapper_pwalk")
+                          "future_imapper_lgl")
 
 
   # 2. future_imapper_chr:future_imap_chr------------------------
@@ -270,8 +260,7 @@ future_imapper_int <- function(...) {
                        future_imap_dfc,
                        future_imap_dfr,
                        future_imap_int,
-                       future_imap_lgl,
-                       future_iwalk)
+                       future_imap_lgl)
 
   imapper_list <- c("future_imapper",
                           "future_imapper_chr",
@@ -279,8 +268,7 @@ future_imapper_int <- function(...) {
                           "future_imapper_dfc",
                           "future_imapper_dfr",
                           "future_imapper_int",
-                          "future_imapper_lgl",
-                          "future_imapper_pwalk")
+                          "future_imapper_lgl")
 
 
   # 2. future_imapper_chr:future_imap_chr------------------------
@@ -320,8 +308,7 @@ future_imapper_lgl <- function(...) {
                        future_imap_dfc,
                        future_imap_dfr,
                        future_imap_int,
-                       future_imap_lgl,
-                       future_iwalk)
+                       future_imap_lgl)
 
   imapper_list <- c("future_imapper",
                           "future_imapper_chr",
@@ -329,8 +316,7 @@ future_imapper_lgl <- function(...) {
                           "future_imapper_dfc",
                           "future_imapper_dfr",
                           "future_imapper_int",
-                          "future_imapper_lgl",
-                          "future_imapper_pwalk")
+                          "future_imapper_lgl")
 
 
   # 2. future_imapper_chr:future_imap_chr------------------------
@@ -370,8 +356,7 @@ future_imapper_pwalk <- function(...) {
                        future_imap_dfc,
                        future_imap_dfr,
                        future_imap_int,
-                       future_imap_lgl,
-                       future_pwalk)
+                       future_imap_lgl)
 
   imapper_list <- c("future_imapper",
                           "future_imapper_chr",
@@ -379,8 +364,7 @@ future_imapper_pwalk <- function(...) {
                           "future_imapper_dfc",
                           "future_imapper_dfr",
                           "future_imapper_int",
-                          "future_imapper_lgl",
-                          "future_imapper_pwalk")
+                          "future_imapper_lgl")
 
 
   # 2. future_imapper_chr:future_imap_chr------------------------
