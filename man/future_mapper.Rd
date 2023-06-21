@@ -2,9 +2,10 @@
 % Please edit documentation in R/futureM.R
 \name{future_mapper}
 \alias{future_mapper}
+\alias{future_mapper1}
 \title{future_mapper}
 \usage{
-future_mapper(...)
+future_mapper1(...)
 }
 \arguments{
 \item{...}{Input parameter}

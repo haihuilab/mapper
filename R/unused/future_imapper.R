@@ -60,7 +60,11 @@ future_imapper_template <- function(...) {
 #' future_imapper
 #' @rdname future_imapper
 #' @export
-future_imapper <- future_imapper_template()
+future_imapper <- function(...) {
+  future_imapper_template()
+  future_imapper(...)
+}
+
 
 #' future_imapper_chr
 #' @rdname future_imapper_chr
