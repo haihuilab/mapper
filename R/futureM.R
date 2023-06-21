@@ -63,7 +63,13 @@ future_mapper_template <- function(...) {
 #' @name future_mapper
 #' @export
 future_mapper <- function(...) {
-  future_mapper_template()
+  future_mapper_template(...)
+  future_mapper(...)
 }
 
+# Example
+library(mapper)
+library(tidyverse)
+1:10 %>%
+  future_mapper(rnorm, n = 10)
 
