@@ -57,36 +57,42 @@ future_mapper_template <- function(...) {
   list2env(func_list, envir = .GlobalEnv)
 }
 
-
+#' future_invoke_mapper
 #' @rdname future_mapper
 #' @export
 future_mapper <- future_mapper_template()
 
+#' future_invoke_mapper_chr
 #' @rdname future_mapper_chr
 #' @export
 future_mapper_chr <- future_mapper_template()
 
+#' future_invoke_mapper_dbl
 #' @rdname future_mapper_dbl
 #' @export
 future_mapper_dbl <- future_mapper_template()
 
+#' future_invoke_mapper_dfc
 #' @rdname future_mapper_dfc
 #' @export
 future_mapper_dfc <- future_mapper_template()
 
+#' future_invoke_mapper_dfr
 #' @rdname future_mapper_dfr
 #' @export
 future_mapper_dfr <- future_mapper_template()
 
+#' future_invoke_mapper_int
 #' @rdname future_mapper_int
 #' @export
 future_mapper_int <- future_mapper_template()
 
+#' future_invoke_mapper_lgl
 #' @rdname future_mapper_lgl
 #' @export
 future_mapper_lgl <- future_mapper_template()
 
-
+#' future_invoke_mapper_walk
 #' @rdname future_mapper_walk
 #' @export
 future_mapper_walk <- future_mapper_template()

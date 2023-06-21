@@ -56,31 +56,37 @@ future_invoke_mapper_template <- function(...) {
 }
 
 
-
+#' future_invoke_mapper
 #' @rdname future_invoke_mapper
 #' @export
 future_invoke_mapper <- future_invoke_mapper_template()
 
+#' future_invoke_mapper_chr
 #' @rdname future_invoke_mapper_chr
 #' @export
 future_invoke_mapper_chr <- future_invoke_mapper_template()
 
+#' future_invoke_mapper_dbl
 #' @rdname future_invoke_mapper_dbl
 #' @export
 future_invoke_mapper_dbl <- future_invoke_mapper_template()
 
+#' future_invoke_mapper_dfc
 #' @rdname future_invoke_mapper_dfc
 #' @export
 future_invoke_mapper_dfc <- future_invoke_mapper_template()
 
+#' future_invoke_mapper_dfr
 #' @rdname future_invoke_mapper_dfr
 #' @export
 future_invoke_mapper_dfr <- future_invoke_mapper_template()
 
+#' future_invoke_mapper_int
 #' @rdname future_invoke_mapper_int
 #' @export
 future_invoke_mapper_int <- future_invoke_mapper_template()
 
+#' future_invoke_mapper_lgl
 #' @rdname future_invoke_mapper_lgl
 #' @export
 future_invoke_mapper_lgl <- future_invoke_mapper_template()
