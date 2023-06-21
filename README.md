@@ -22,6 +22,7 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 ## basic example code
 # devtools::install_github("haihuilab/mapper")
+library(furrr)
 library(mapper)
 library(tidyverse)
 # Remove cache when using furrr:map functions
