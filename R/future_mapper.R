@@ -34,21 +34,21 @@ future_mapper_template <- function(...) {
 
   # map function------------------------
   map_func <- function(i) {
-    # Start multicore
-    future::plan(future::multisession, workers = parallel::detectCores()-2)
-    options(future.globals.maxSize = 5000000000)
-
     inner_func <- i
     output <-  function(...) {
+      # Start multicore
+      future::plan(future::multisession, workers = parallel::detectCores()-2)
+      options(future.globals.maxSize = 5000000000)
+
       # map function
       res <- inner_func(...)
       return(res)
 
-    }
-    # shut down multicore and clear cache
-    future::plan(future::sequential)
-    gc()
+      # shut down multicore and clear cache
+      future::plan(future::sequential)
+      gc()
 
+    }
     return(output)
   }
 
@@ -61,8 +61,13 @@ future_mapper_template <- function(...) {
 #' @rdname future_mapper
 #' @export
 future_mapper <- function(...) {
-  future_mapper_template()
+  flag <- FALSE
+  if (!flag) {
+    future_mapper_template()
+  } else {
   future_mapper(...)
+  flag <- TRUE
+  }
 }
 
 #' future_invoke_mapper_chr
