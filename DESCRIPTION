@@ -12,6 +12,7 @@ RoxygenNote: 7.2.3
 Imports: 
     dplyr,
     furrr,
+    parallel,
     purrr
 Suggests: 
     testthat (>= 3.0.0)
