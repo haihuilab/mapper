@@ -2,13 +2,29 @@
 % Please edit documentation in R/future_pmapper.R
 \name{future_pmapper}
 \alias{future_pmapper}
-\title{MAPping in Parallel and Ending parallel mapping \code{furrr} in R}
+\title{Apply a function to each element of a vector, and its index via futures}
 \usage{
 future_pmapper(...)
 }
 \arguments{
-\item{workers}{default parallel workers are detectCores()-2}
+\item{...}{Additional arguments passed on to the mapped function.
+
+We now generally recommend against using \code{...} to pass additional
+(constant) arguments to \code{.f}. Instead use a shorthand anonymous function:
+
+\if{html}{\out{<div class="sourceCode R">}}\preformatted{# Instead of
+x |> map(f, 1, 2, collapse = ",")
+# do:
+x |> map(\\(x) f(x, 1, 2, collapse = ","))
+}\if{html}{\out{</div>}}
+
+This makes it easier to understand which arguments belong to which
+function and will tend to yield better error messages.}
+}
+\value{
+A vector the same length as .x.
 }
 \description{
-MAPping in Parallel and Ending parallel mapping \code{furrr} in R
+These functions work exactly the same as \code{\link[purrr:pmap]{purrr::pmap()}} functions,
+but allow you to map in parallel.
 }

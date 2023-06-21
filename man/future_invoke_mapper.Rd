@@ -2,13 +2,17 @@
 % Please edit documentation in R/future_invoke_mapper.R
 \name{future_invoke_mapper}
 \alias{future_invoke_mapper}
-\title{invoke_mapping in Parallel and Ending parallel invoke_mapping \code{furrr} in R}
+\title{Apply a function to each element of a vector, and its index via futures}
 \usage{
 future_invoke_mapper(...)
 }
 \arguments{
-\item{workers}{default parallel workers are detectCores()-2}
+\item{...}{Additional arguments passed to each function.}
+}
+\value{
+A vector the same length as .x.
 }
 \description{
-invoke_mapping in Parallel and Ending parallel invoke_mapping \code{furrr} in R
+These functions work exactly the same as \code{\link[purrr:invoke]{purrr::invoke_map()}} functions,
+but allow you to map in parallel.
 }
