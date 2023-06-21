@@ -7,64 +7,42 @@
 #' @inheritParams furrr::future_pmap
 #' @importFrom magrittr `%>%`
 #' @importFrom purrr map
+
 #'
 #' @return
 #' A vector the same length as .x.
 #'
 #' @export
 
-
 #' @rdname future_pmapper
 #' @export
-future_pmapper <- function(...) {
-  future_pmapper(...)
-}
-
+future_pmapper <- future_pmapper_template()
 
 #' @rdname future_pmapper_chr
 #' @export
-future_pmapper_chr <- function(...) {
-  future_pmapper(...)
-}
-
+future_pmapper_chr <- future_pmapper_template()
 
 #' @rdname future_pmapper_dbl
 #' @export
-future_pmapper_dbl <- function(...) {
-  future_pmapper(...)
-}
-
+future_pmapper_dbl <- future_pmapper_template()
 
 #' @rdname future_pmapper_dfc
 #' @export
-future_pmapper_dfc <- function(...) {
-  future_pmapper(...)
-}
-
+future_pmapper_dfc <- future_pmapper_template()
 
 #' @rdname future_pmapper_dfr
 #' @export
-future_pmapper_dfr <- function(...) {
-  future_pmapper(...)
-}
-
+future_pmapper_dfr <- future_pmapper_template()
 
 #' @rdname future_pmapper_int
 #' @export
-future_pmapper_int <- function(...) {
-  future_pmapper(...)
-}
-
+future_pmapper_int <- future_pmapper_template()
 
 #' @rdname future_pmapper_lgl
 #' @export
-future_pmapper_lgl <- function(...) {
-  future_pmapper(...)
-}
-
+future_pmapper_lgl <- future_pmapper_template()
 
 #' @rdname future_pmapper_pwalk
 #' @export
-future_pmapper_pwalk <- function(...) {
-  future_pmapper(...)
-}
+future_pmapper_pwalk <- future_pmapper_template()
+

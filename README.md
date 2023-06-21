@@ -24,7 +24,7 @@ This is a basic example which shows you how to solve a common problem:
 # devtools::install_github("haihuilab/mapper")
 library(mapper)
 library(tidyverse)
-Remove cache when using furrr:map functions
+# Remove cache when using furrr:map functions
 1:10 %>%
   future_mapper(rnorm, n = 10, .options = furrr_options(seed = 1233)) %>%
   future_mapper_dbl(mean)
