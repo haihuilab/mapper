@@ -47,7 +47,6 @@ future_mapper_template <- function(...) {
       # shut down multicore and clear cache
       future::plan(future::sequential)
       gc()
-
     }
     return(output)
   }
@@ -64,9 +63,9 @@ future_mapper <- function(...) {
   flag <- FALSE
   if (!flag) {
     future_mapper_template()
+    flag <- TRUE
   } else {
   future_mapper(...)
-  flag <- TRUE
   }
 }
 
