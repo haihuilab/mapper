@@ -61,105 +61,65 @@ future_mapper_template <- function(arg) {
 #' @rdname future_mapper
 #' @export
 future_mapper <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper_template("future_mapper")
-    flag <- TRUE
-  } else {
-  future_mapper(...)
-  }
+    future_mapper(...)
 }
+
 
 #' future_invoke_mapper_chr
 #' @rdname future_mapper_chr
 #' @export
 future_mapper_chr <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper_template("future_mapper_chr")
-    flag <- TRUE
-  } else {
     future_mapper_chr(...)
-
-  }
 }
 
 #' future_invoke_mapper_dbl
 #' @rdname future_mapper_dbl
 #' @export
 future_mapper_dbl <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper_template("future_mapper_dbl")
-    flag <- TRUE
-  } else {
     future_mapper_dbl(...)
-  }
 }
 
 #' future_invoke_mapper_dfc
 #' @rdname future_mapper_dfc
 #' @export
 future_mapper_dfc <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper_template("future_mapper_dfc")
-    flag <- TRUE
-  } else {
     future_mapper_dfc(...)
-  }
 }
 
 #' future_invoke_mapper_dfr
 #' @rdname future_mapper_dfr
 #' @export
 future_mapper_dfr <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper_template("future_mapper_dfr")
-    flag <- TRUE
-  } else {
-    future_mapper+dfr(...)
-  }
+    future_mapper_dfr(...)
 }
 
 #' future_invoke_mapper_int
 #' @rdname future_mapper_int
 #' @export
 future_mapper_int <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper_template("future_mapper_int")
-    flag <- TRUE
-  } else {
     future_mapper_int(...)
-  }
 }
 
 #' future_invoke_mapper_lgl
 #' @rdname future_mapper_lgl
 #' @export
 future_mapper_lgl <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper_template("future_mapper_lgl")
-    flag <- TRUE
-  } else {
     future_mapper_lgl(...)
-  }
 }
 
 #' future_invoke_mapper_walk
 #' @rdname future_mapper_walk
 #' @export
 future_mapper_walk <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper_template("future_mapper_walk")
-    flag <- TRUE
-  } else {
     future_mapper_walk(...)
-  }
 }
 
 # Example

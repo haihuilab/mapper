@@ -61,13 +61,8 @@ future_imapper_template <- function(arg) {
 #' @rdname future_imapper
 #' @export
 future_imapper <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_imapper_template("future_imapper")
-    flag <- TRUE
-  } else {
     future_imapper(...)
-  }
 }
 
 
@@ -75,77 +70,47 @@ future_imapper <- function(...) {
 #' @rdname future_imapper_chr
 #' @export
 future_imapper_chr <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_imapper_template("future_imapper_chr")
-    flag <- TRUE
-  } else {
     future_imapper_chr(...)
-  }
 }
 
 #' future_imapper_dbl
 #' @rdname future_imapper_dbl
 #' @export
 future_imapper_dbl <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_imapper_template("future_imapper_dbl")
-    flag <- TRUE
-  } else {
     future_imapper_dbl(...)
-  }
 }
 
 #' future_imapper_dfc
 #' @rdname future_imapper_dfc
 #' @export
 future_imapper_dfc <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_imapper_template("future_imapper_dfc")
-    flag <- TRUE
-  } else {
     future_imapper_dfc(...)
-  }
 }
 
 #' future_imapper_dfr
 #' @rdname future_imapper_dfr
 #' @export
 future_imapper_dfr <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_imapper_template("future_imapper_dfr")
-    flag <- TRUE
-  } else {
     future_imapper_dfr(...)
-  }
 }
 
 #' future_imapper_int
 #' @rdname future_imapper_int
 #' @export
 future_imapper_int <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_imapper_template("future_imapper_int")
-    flag <- TRUE
-  } else {
     future_imapper_int(...)
-  }
 }
 
 #' future_imapper_lgl
 #' @rdname future_imapper_lgl
 #' @export
 future_imapper_lgl <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_imapper_template("future_imapper_lgl")
-    flag <- TRUE
-  } else {
     future_imapper_lgl(...)
-  }
 }
 

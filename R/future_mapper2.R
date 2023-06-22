@@ -61,97 +61,57 @@ future_mapper2_template <- function(arg) {
 #' @rdname future_mapper2
 #' @export
 future_mapper2 <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper2_template("future_mapper2")
-    flag <- TRUE
-  } else {
     future_mapper2(...)
-  }
 }
 
 #' @rdname future_mapper2_chr
 #' @export
 future_mapper2_chr <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper2_template("future_mapper2_chr")
-    flag <- TRUE
-  } else {
     future_mapper2_chr(...)
-  }
 }
 
 #' @rdname future_mapper2_dbl
 #' @export
 future_mapper2_dbl <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper2_template("future_mapper2_dbl")
-    flag <- TRUE
-  } else {
     future_mapper2_dbl(...)
-  }
 }
 
 #' @rdname future_mapper2_dfc
 #' @export
 future_mapper2_dfc <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper2_template("future_mapper2_dfc")
-    flag <- TRUE
-  } else {
     future_mapper2_dfc(...)
-  }
 }
 
 #' @rdname future_mapper2_dfr
 #' @export
 future_mapper2_dfr <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper2_template("future_mapper2_dfr")
-    flag <- TRUE
-  } else {
     future_mapper2_dfr(...)
-  }
 }
 
 #' @rdname future_mapper2_int
 #' @export
 future_mapper2_int <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper2_template("future_mapper2_int")
-    flag <- TRUE
-  } else {
     future_mapper2_int(...)
-  }
 }
 
 #' @rdname future_mapper2_lgl
 #' @export
 future_mapper2_lgl <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper2_template("future_mapper2_lgl")
-    flag <- TRUE
-  } else {
     future_mapper2_lgl(...)
-  }
 }
 
 #' @rdname future_mapper2_walk2
 #' @export
 future_mapper2_walk2 <- function(...) {
-  flag <- FALSE
-  if (!flag) {
     future_mapper2_template("future_mapper2_walk2")
-    flag <- TRUE
-  } else {
     future_mapper2_walk2(...)
-  }
 }
 
 
