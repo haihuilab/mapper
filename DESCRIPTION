@@ -1,6 +1,6 @@
 Package: mapper
 Title: Using furrr map functions and automated remove cache
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: 
     person("Haihui", "Zhang", , "hanfei19@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
