@@ -19,7 +19,7 @@ future_invoke_mapper <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map(...)
+  res <- furrr::future_invoke_map(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -35,7 +35,7 @@ future_invoke_mapper_chr <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_chr(...)
+  res <- furrr::future_invoke_map_chr(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -51,7 +51,7 @@ future_invoke_mapper_dbl <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_dbl(...)
+  res <- furrr::future_invoke_map_dbl(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -67,7 +67,7 @@ future_invoke_mapper_dfc <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_dfc(...)
+  res <- furrr::future_invoke_map_dfc(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -83,7 +83,7 @@ future_invoke_mapper_dfr <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_dfr(...)
+  res <- furrr::future_invoke_map_dfr(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -99,7 +99,7 @@ future_invoke_mapper_int <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_int(...)
+  res <- furrr::future_invoke_map_int(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -115,7 +115,7 @@ future_invoke_mapper_lgl <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_lgl(...)
+  res <- furrr::future_invoke_map_lgl(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()

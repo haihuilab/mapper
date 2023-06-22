@@ -18,7 +18,7 @@ future_pmapper <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map(...)
+  res <- furrr::future_pmap(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -34,7 +34,7 @@ future_pmapper_chr <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_chr(...)
+  res <- furrr::future_pmap_chr(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -50,7 +50,7 @@ future_pmapper_dbl <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_dbl(...)
+  res <- furrr::future_pmap_dbl(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -66,7 +66,7 @@ future_pmapper_dfc <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_dfc(...)
+  res <- furrr::future_pmap_dfc(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -82,7 +82,7 @@ future_pmapper_dfr <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_dfr(...)
+  res <- furrr::future_pmap_dfr(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -98,7 +98,7 @@ future_pmapper_int <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_int(...)
+  res <- furrr::future_pmap_int(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -114,7 +114,7 @@ future_pmapper_lgl <- function(...) {
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_map_lgl(...)
+  res <- furrr::future_pmap_lgl(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
