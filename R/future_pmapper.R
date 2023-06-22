@@ -34,21 +34,21 @@ future_pmapper_template <- function(...) {
 
   # map function------------------------
   pmapper_func <- function(i) {
-    # Start multicore
-    future::plan(future::multisession, workers = parallel::detectCores()-2)
-    options(future.globals.maxSize = 5000000000)
-
     inner_func <- i
     output <-  function(...) {
+      # Start multicore
+      future::plan(future::multisession, workers = parallel::detectCores()-2)
+      options(future.globals.maxSize = 5000000000)
+
       # map function
       res <- inner_func(...)
+
+      # shut down multicore and clear cache
+      future::plan(future::sequential)
+      gc()
+
       return(res)
-
     }
-    # shut down multicore and clear cache
-    future::plan(future::sequential)
-    gc()
-
     return(output)
   }
 
@@ -62,56 +62,96 @@ future_pmapper_template <- function(...) {
 #' @rdname future_pmapper
 #' @export
 future_pmapper <- function(...) {
-  future_pmapper_template()
-  future_pmapper(...)
+  flag <- FALSE
+  if (!flag) {
+    future_pmapper_template()
+    flag <- TRUE
+  } else {
+    future_pmapper(...)
+  }
 }
 
 #' @rdname future_pmapper_chr
 #' @export
 future_pmapper_chr <- function(...) {
-  future_pmapper_template()
-  future_pmapper_chr(...)
+  flag <- FALSE
+  if (!flag) {
+    future_pmapper_template()
+    flag <- TRUE
+  } else {
+    future_pmapper_chr(...)
+  }
 }
 
 #' @rdname future_pmapper_dbl
 #' @export
 future_pmapper_dbl <- function(...) {
-  future_pmapper_template()
-  future_pmapper_dbl(...)
+  flag <- FALSE
+  if (!flag) {
+    future_pmapper_template()
+    flag <- TRUE
+  } else {
+    future_pmapper_dbl(...)
+  }
 }
 
 #' @rdname future_pmapper_dfc
 #' @export
 future_pmapper_dfc <- function(...) {
-  future_pmapper_template()
-  future_pmapper_dfc(...)
+  flag <- FALSE
+  if (!flag) {
+    future_pmapper_template()
+    flag <- TRUE
+  } else {
+    future_pmapper_dfc(...)
+  }
 }
 
 #' @rdname future_pmapper_dfr
 #' @export
 future_pmapper_dfr <- function(...) {
-  future_pmapper_template()
-  future_pmapper_dfr(...)
+  flag <- FALSE
+  if (!flag) {
+    future_pmapper_template()
+    flag <- TRUE
+  } else {
+    future_pmapper_dfr(...)
+  }
 }
 
 #' @rdname future_pmapper_int
 #' @export
 future_pmapper_int <- function(...) {
-  future_pmapper_template()
-  future_pmapper_int(...)
+  flag <- FALSE
+  if (!flag) {
+    future_pmapper_template()
+    flag <- TRUE
+  } else {
+    future_pmapper_int(...)
+  }
 }
 
 #' @rdname future_pmapper_lgl
 #' @export
 future_pmapper_lgl <- function(...) {
-  future_pmapper_template()
-  future_pmapper_lgl(...)
+  flag <- FALSE
+  if (!flag) {
+    future_pmapper_template()
+    flag <- TRUE
+  } else {
+    future_pmapper_lgl(...)
+  }
 }
 
 #' @rdname future_pmapper_pwalk
 #' @export
 future_pmapper_pwalk <- function(...) {
-  future_pmapper_template()
-  future_pmapper_pwalk(...)
+  flag <- FALSE
+  if (!flag) {
+    future_pmapper_template()
+    flag <- TRUE
+  } else {
+    future_pmapper+pwalk(...)
+  }
 }
 

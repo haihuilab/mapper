@@ -34,21 +34,21 @@ future_mapper2_template <- function(...) {
 
   # map function------------------------
   mapper2_func <- function(i) {
-    # Start multicore
-    future::plan(future::multisession, workers = parallel::detectCores()-2)
-    options(future.globals.maxSize = 5000000000)
-
     inner_func <- i
     output <-  function(...) {
+      # Start multicore
+      future::plan(future::multisession, workers = parallel::detectCores()-2)
+      options(future.globals.maxSize = 5000000000)
+
       # map function
       res <- inner_func(...)
+
+      # shut down multicore and clear cache
+      future::plan(future::sequential)
+      gc()
+
       return(res)
-
     }
-    # shut down multicore and clear cache
-    future::plan(future::sequential)
-    gc()
-
     return(output)
   }
 
@@ -61,57 +61,97 @@ future_mapper2_template <- function(...) {
 #' @rdname future_mapper2
 #' @export
 future_mapper2 <- function(...) {
-  future_mapper2_template()
-  future_mapper2(...)
+  flag <- FALSE
+  if (!flag) {
+    future_mapper2_template()
+    flag <- TRUE
+  } else {
+    future_mapper2(...)
+  }
 }
 
 #' @rdname future_mapper2_chr
 #' @export
 future_mapper2_chr <- function(...) {
-  future_mapper2_template()
-  future_mapper2_chr(...)
+  flag <- FALSE
+  if (!flag) {
+    future_mapper2_template()
+    flag <- TRUE
+  } else {
+    future_mapper2_chr(...)
+  }
 }
 
 #' @rdname future_mapper2_dbl
 #' @export
 future_mapper2_dbl <- function(...) {
-  future_mapper2_template()
-  future_mapper2_dbl(...)
+  flag <- FALSE
+  if (!flag) {
+    future_mapper2_template()
+    flag <- TRUE
+  } else {
+    future_mapper2_dbl(...)
+  }
 }
 
 #' @rdname future_mapper2_dfc
 #' @export
 future_mapper2_dfc <- function(...) {
-  future_mapper2_template()
-  future_mapper2_dfc(...)
+  flag <- FALSE
+  if (!flag) {
+    future_mapper2_template()
+    flag <- TRUE
+  } else {
+    future_mapper2_dfc(...)
+  }
 }
 
 #' @rdname future_mapper2_dfr
 #' @export
 future_mapper2_dfr <- function(...) {
-  future_mapper2_template()
-  future_mapper2_dfr(...)
+  flag <- FALSE
+  if (!flag) {
+    future_mapper2_template()
+    flag <- TRUE
+  } else {
+    future_mapper2_dfr(...)
+  }
 }
 
 #' @rdname future_mapper2_int
 #' @export
 future_mapper2_int <- function(...) {
-  future_mapper2_template()
-  future_mapper2_int(...)
+  flag <- FALSE
+  if (!flag) {
+    future_mapper2_template()
+    flag <- TRUE
+  } else {
+    future_mapper2_int(...)
+  }
 }
 
 #' @rdname future_mapper2_lgl
 #' @export
 future_mapper2_lgl <- function(...) {
-  future_mapper2_template()
-  future_mapper2_lgl(...)
+  flag <- FALSE
+  if (!flag) {
+    future_mapper2_template()
+    flag <- TRUE
+  } else {
+    future_mapper2_lgl(...)
+  }
 }
 
 #' @rdname future_mapper2_walk2
 #' @export
 future_mapper2_walk2 <- function(...) {
-  future_mapper2_template()
-  future_mapper2_walk2(...)
+  flag <- FALSE
+  if (!flag) {
+    future_mapper2_template()
+    flag <- TRUE
+  } else {
+    future_mapper2_walk2(...)
+  }
 }
 
 

@@ -32,21 +32,21 @@ future_invoke_mapper_template <- function(...) {
 
   # map function------------------------
   invoke_mapper_func <- function(i) {
-    # Start multicore
-    future::plan(future::multisession, workers = parallel::detectCores()-2)
-    options(future.globals.maxSize = 5000000000)
-
     inner_func <- i
     output <-  function(...) {
+      # Start multicore
+      future::plan(future::multisession, workers = parallel::detectCores()-2)
+      options(future.globals.maxSize = 5000000000)
+
       # map function
       res <- inner_func(...)
+
+      # shut down multicore and clear cache
+      future::plan(future::sequential)
+      gc()
+
       return(res)
-
     }
-    # shut down multicore and clear cache
-    future::plan(future::sequential)
-    gc()
-
     return(output)
   }
 
@@ -60,56 +60,91 @@ future_invoke_mapper_template <- function(...) {
 #' @rdname future_invoke_mapper
 #' @export
 future_invoke_mapper <- function(...) {
-  future_invoke_mapper_template()
-  future_invoke_mapper(...)
+  flag <- FALSE
+  if (!flag) {
+    future_invoke_mapper_template()
+    flag <- TRUE
+  } else {
+    future_invoke_mapper(...)
+  }
 }
 
 #' future_invoke_mapper_chr
 #' @rdname future_invoke_mapper_chr
 #' @export
 future_invoke_mapper_chr <- function(...) {
-  future_invoke_mapper_template()
-  future_invoke_mapper_chr(...)
+  flag <- FALSE
+  if (!flag) {
+    future_invoke_mapper_template()
+    flag <- TRUE
+  } else {
+    future_invoke_mapper_chr(...)
+  }
 }
 
 #' future_invoke_mapper_dbl
 #' @rdname future_invoke_mapper_dbl
 #' @export
 future_invoke_mapper_dbl <- function(...) {
-  future_invoke_mapper_template()
-  future_invoke_mapper_dbl(...)
+  flag <- FALSE
+  if (!flag) {
+    future_invoke_mapper_template()
+    flag <- TRUE
+  } else {
+    future_invoke_mapper_dbl(...)
+  }
 }
 
 #' future_invoke_mapper_dfc
 #' @rdname future_invoke_mapper_dfc
 #' @export
 future_invoke_mapper_dfc <- function(...) {
-  future_invoke_mapper_template()
-  future_invoke_mapper_dfc(...)
+  flag <- FALSE
+  if (!flag) {
+    future_invoke_mapper_template()
+    flag <- TRUE
+  } else {
+    future_invoke_mapper_dfc(...)
+  }
 }
 
 #' future_invoke_mapper_dfr
 #' @rdname future_invoke_mapper_dfr
 #' @export
 future_invoke_mapper_dfr <- function(...) {
-  future_invoke_mapper_template()
-  future_invoke_mapper_dfr(...)
+  flag <- FALSE
+  if (!flag) {
+    future_invoke_mapper_template()
+    flag <- TRUE
+  } else {
+    future_invoke_mapper_dfr(...)
+  }
 }
 
 #' future_invoke_mapper_int
 #' @rdname future_invoke_mapper_int
 #' @export
 future_invoke_mapper_int <- function(...) {
-  future_invoke_mapper_template()
-  future_invoke_mapper_int(...)
+  flag <- FALSE
+  if (!flag) {
+    future_invoke_mapper_template()
+    flag <- TRUE
+  } else {
+    future_invoke_mapper_int(...)
+  }
 }
 
 #' future_invoke_mapper_lgl
 #' @rdname future_invoke_mapper_lgl
 #' @export
 future_invoke_mapper_lgl <- function(...) {
-  future_invoke_mapper_template()
-  future_invoke_mapper_lgl(...)
+  flag <- FALSE
+  if (!flag) {
+    future_invoke_mapper_template()
+    flag <- TRUE
+  } else {
+    future_invoke_mapper_lgl(...)
+  }
 }
 
 
