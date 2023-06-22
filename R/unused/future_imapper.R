@@ -42,13 +42,14 @@ future_imapper_template <- function(...) {
     output <-  function(...) {
       # imap function
       res <- inner_func(...)
+
+      # shut down multicore and clear cache
+      future::plan(future::sequential)
+      gc()
+
       return(res)
 
     }
-    # shut down multicore and clear cache
-    future::plan(future::sequential)
-    gc()
-
     return(output)
   }
 

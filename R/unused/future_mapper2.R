@@ -42,13 +42,14 @@ future_mapper2_template <- function(...) {
     output <-  function(...) {
       # map function
       res <- inner_func(...)
+
+      # shut down multicore and clear cache
+      future::plan(future::sequential)
+      gc()
+
       return(res)
 
     }
-    # shut down multicore and clear cache
-    future::plan(future::sequential)
-    gc()
-
     return(output)
   }
 
