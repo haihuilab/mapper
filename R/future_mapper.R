@@ -62,7 +62,8 @@ future_mapper_template <- function(arg) {
 #' @export
 future_mapper <- function(...) {
     future_mapper_template("future_mapper")
-    future_mapper(...)
+    res <- future_mapper(...)
+    return(res)
 }
 
 
