@@ -163,10 +163,10 @@ future_mapper_walk <- function(...) {
 }
 
 # Example
-library(tidyverse)
-library(furrr)
-library(mapper)
-# Remove cache when using furrr:map functions
-1:10 %>%
-  future_mapper(rnorm, n = 10, .options = furrr_options(seed = 1233))
+# library(tidyverse)
+# library(furrr)
+# library(mapper)
+# # Remove cache when using furrr:map functions
+# 1:10 %>%
+#   future_mapper(rnorm, n = 10, .options = furrr_options(seed = 1233))
 
