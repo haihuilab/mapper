@@ -58,6 +58,7 @@ future_mapper_template <- function(arg) {
 }
 
 #' future_invoke_mapper
+#' @import future_mapper_template
 #' @rdname future_mapper
 #' @export
 future_mapper <- function(...) {
