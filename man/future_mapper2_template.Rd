@@ -4,7 +4,22 @@
 \alias{future_mapper2_template}
 \title{Apply a function to each element of a vector, and its index via futures}
 \usage{
-future_mapper2_template(arg)
+future_mapper2_template(...)
+}
+\arguments{
+\item{...}{Additional arguments passed on to the mapped function.
+
+We now generally recommend against using \code{...} to pass additional
+(constant) arguments to \code{.f}. Instead use a shorthand anonymous function:
+
+\if{html}{\out{<div class="sourceCode R">}}\preformatted{# Instead of
+x |> map(f, 1, 2, collapse = ",")
+# do:
+x |> map(\\(x) f(x, 1, 2, collapse = ","))
+}\if{html}{\out{</div>}}
+
+This makes it easier to understand which arguments belong to which
+function and will tend to yield better error messages.}
 }
 \value{
 A vector the same length as .x.

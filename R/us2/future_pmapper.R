@@ -13,7 +13,7 @@
 #' A vector the same length as .x.
 #' future_pmapper_template
 #' @export
-future_pmapper_template <- function(...) {
+future_pmapper_template <- function(arg) {
   pmap_list <- c(furrr::future_pmap,
                  furrr::future_pmap_chr,
                  furrr::future_pmap_dbl,
@@ -34,14 +34,15 @@ future_pmapper_template <- function(...) {
 
   # map function------------------------
   pmapper_func <- function(i) {
-    # Start multicore
-    future::plan(future::multisession, workers = parallel::detectCores()-2)
-    options(future.globals.maxSize = 5000000000)
-
     inner_func <- i
     output <-  function(...) {
+      # Start multicore
+      future::plan(future::multisession, workers = parallel::detectCores()-2)
+      options(future.globals.maxSize = 5000000000)
+
       # map function
       res <- inner_func(...)
+
       # shut down multicore and clear cache
       future::plan(future::sequential)
       gc()
@@ -50,8 +51,7 @@ future_pmapper_template <- function(...) {
     }
     return(output)
   }
-
-  func_list <- map(pmap_list, function(i) pmapper_func(i)) %>% stats::setNames(pmapper_list)
+  func_list <- map(pmap_list[which(pmapper_list == arg)], function(i) pmapper_func(i)) %>% stats::setNames(arg)
   # Extract the functions as individual ones
   list2env(func_list, envir = .GlobalEnv)
 }
@@ -60,33 +60,57 @@ future_pmapper_template <- function(...) {
 
 #' @rdname future_pmapper
 #' @export
-future_pmapper <- future_pmapper_template()
+future_pmapper <- function(...) {
+    future_pmapper_template("future_pmapper")
+    future_pmapper(...)
+}
 
 #' @rdname future_pmapper_chr
 #' @export
-future_pmapper_chr <- future_pmapper_template()
+future_pmapper_chr <- function(...) {
+    future_pmapper_template("future_pmapper_chr")
+    future_pmapper_chr(...)
+}
 
 #' @rdname future_pmapper_dbl
 #' @export
-future_pmapper_dbl <- future_pmapper_template()
+future_pmapper_dbl <- function(...) {
+    future_pmapper_template("future_pmapper_dbl")
+    future_pmapper_dbl(...)
+}
 
 #' @rdname future_pmapper_dfc
 #' @export
-future_pmapper_dfc <- future_pmapper_template()
+future_pmapper_dfc <- function(...) {
+    future_pmapper_template("future_pmapper_dfc")
+    future_pmapper_dfc(...)
+}
 
 #' @rdname future_pmapper_dfr
 #' @export
-future_pmapper_dfr <- future_pmapper_template()
+future_pmapper_dfr <- function(...) {
+    future_pmapper_template("future_pmapper_dfr")
+    future_pmapper_dfr(...)
+}
 
 #' @rdname future_pmapper_int
 #' @export
-future_pmapper_int <- future_pmapper_template()
+future_pmapper_int <- function(...) {
+    future_pmapper_template("future_pmapper_int")
+    future_pmapper_int(...)
+}
 
 #' @rdname future_pmapper_lgl
 #' @export
-future_pmapper_lgl <- future_pmapper_template()
+future_pmapper_lgl <- function(...) {
+    future_pmapper_template("future_pmapper_lgl")
+    future_pmapper_lgl(...)
+}
 
 #' @rdname future_pmapper_pwalk
 #' @export
-future_pmapper_pwalk <- future_pmapper_template()
+future_pmapper_pwalk <- function(...) {
+    future_pmapper_template("future_pmapper_pwalk")
+    future_pmapper+pwalk(...)
+}
 

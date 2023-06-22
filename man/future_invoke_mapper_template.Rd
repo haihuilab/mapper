@@ -4,7 +4,10 @@
 \alias{future_invoke_mapper_template}
 \title{Apply a function to each element of a vector, and its index via futures}
 \usage{
-future_invoke_mapper_template(arg)
+future_invoke_mapper_template(...)
+}
+\arguments{
+\item{...}{Additional arguments passed to each function.}
 }
 \value{
 A vector the same length as .x.

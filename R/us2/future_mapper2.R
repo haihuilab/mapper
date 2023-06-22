@@ -13,7 +13,7 @@
 #' A vector the same length as .x.
 #' future_mapper2_template
 #' @export
-future_mapper2_template <- function(...) {
+future_mapper2_template <- function(arg) {
   map2_list <- c(furrr::future_map2,
                  furrr::future_map2_chr,
                  furrr::future_map2_dbl,
@@ -34,12 +34,12 @@ future_mapper2_template <- function(...) {
 
   # map function------------------------
   mapper2_func <- function(i) {
-    # Start multicore
-    future::plan(future::multisession, workers = parallel::detectCores()-2)
-    options(future.globals.maxSize = 5000000000)
-
     inner_func <- i
     output <-  function(...) {
+      # Start multicore
+      future::plan(future::multisession, workers = parallel::detectCores()-2)
+      options(future.globals.maxSize = 5000000000)
+
       # map function
       res <- inner_func(...)
 
@@ -48,12 +48,11 @@ future_mapper2_template <- function(...) {
       gc()
 
       return(res)
-
     }
     return(output)
   }
 
-  func_list <- map(map2_list, function(i) mapper2_func(i)) %>% stats::setNames(mapper2_list)
+  func_list <- map(map2_list[which(mapper2_list == arg)], function(i) mapper2_func(i)) %>% stats::setNames(arg)
   # Extract the functions as individual ones
   list2env(func_list, envir = .GlobalEnv)
 }
@@ -61,34 +60,58 @@ future_mapper2_template <- function(...) {
 
 #' @rdname future_mapper2
 #' @export
-future_mapper2 <- future_mapper2_template()
+future_mapper2 <- function(...) {
+    future_mapper2_template("future_mapper2")
+    future_mapper2(...)
+}
 
 #' @rdname future_mapper2_chr
 #' @export
-future_mapper2_chr <- future_mapper2_template()
+future_mapper2_chr <- function(...) {
+    future_mapper2_template("future_mapper2_chr")
+    future_mapper2_chr(...)
+}
 
 #' @rdname future_mapper2_dbl
 #' @export
-future_mapper2_dbl <- future_mapper2_template()
+future_mapper2_dbl <- function(...) {
+    future_mapper2_template("future_mapper2_dbl")
+    future_mapper2_dbl(...)
+}
 
 #' @rdname future_mapper2_dfc
 #' @export
-future_mapper2_dfc <- future_mapper2_template()
+future_mapper2_dfc <- function(...) {
+    future_mapper2_template("future_mapper2_dfc")
+    future_mapper2_dfc(...)
+}
 
 #' @rdname future_mapper2_dfr
 #' @export
-future_mapper2_dfr <- future_mapper2_template()
+future_mapper2_dfr <- function(...) {
+    future_mapper2_template("future_mapper2_dfr")
+    future_mapper2_dfr(...)
+}
 
 #' @rdname future_mapper2_int
 #' @export
-future_mapper2_int <- future_mapper2_template()
+future_mapper2_int <- function(...) {
+    future_mapper2_template("future_mapper2_int")
+    future_mapper2_int(...)
+}
 
 #' @rdname future_mapper2_lgl
 #' @export
-future_mapper2_lgl <- future_mapper2_template()
+future_mapper2_lgl <- function(...) {
+    future_mapper2_template("future_mapper2_lgl")
+    future_mapper2_lgl(...)
+}
 
 #' @rdname future_mapper2_walk2
 #' @export
-future_mapper2_walk2 <- future_mapper2_template()
+future_mapper2_walk2 <- function(...) {
+    future_mapper2_template("future_mapper2_walk2")
+    future_mapper2_walk2(...)
+}
 
 

@@ -13,7 +13,7 @@
 #' A vector the same length as .x.
 #' future_mapper_template
 #' @export
-future_mapper_template <- function(...) {
+future_mapper_template <- function(arg) {
   map_list <- c(furrr::future_map,
                 furrr::future_map_chr,
                 furrr::future_map_dbl,
@@ -33,13 +33,13 @@ future_mapper_template <- function(...) {
                    "future_mapper_walk")
 
   # map function------------------------
-  map_func <- function(i) {
-    # Start multicore
-    future::plan(future::multisession, workers = parallel::detectCores()-2)
-    options(future.globals.maxSize = 5000000000)
-
+  mapper_func <- function(i) {
     inner_func <- i
     output <-  function(...) {
+      # Start multicore
+      future::plan(future::multisession, workers = parallel::detectCores()-2)
+      options(future.globals.maxSize = 5000000000)
+
       # map function
       res <- inner_func(...)
 
@@ -48,61 +48,87 @@ future_mapper_template <- function(...) {
       gc()
 
       return(res)
-
     }
     return(output)
   }
 
-  func_list <- map(map_list, function(i) map_func(i)) %>% stats::setNames(mapper_list)
+  func_list <- map(map_list[which(mapper_list == arg)], function(i) mapper_func(i)) %>% stats::setNames(arg)
   # Extract the functions as individual ones
   list2env(func_list, envir = .GlobalEnv)
 }
 
 #' future_invoke_mapper
+#' @import future_mapper_template
 #' @rdname future_mapper
 #' @export
-future_mapper %>% future_mapper_template()
+future_mapper <- function(...) {
+    future_mapper_template("future_mapper")
+    res <- future_mapper(...)
+    return(res)
+}
+
 
 #' future_invoke_mapper_chr
 #' @rdname future_mapper_chr
 #' @export
-future_mapper_chr <- future_mapper_template()
+future_mapper_chr <- function(...) {
+    future_mapper_template("future_mapper_chr")
+    future_mapper_chr(...)
+}
 
 #' future_invoke_mapper_dbl
 #' @rdname future_mapper_dbl
 #' @export
-future_mapper_dbl <- future_mapper_template()
+future_mapper_dbl <- function(...) {
+    future_mapper_template("future_mapper_dbl")
+    future_mapper_dbl(...)
+}
 
 #' future_invoke_mapper_dfc
 #' @rdname future_mapper_dfc
 #' @export
-future_mapper_dfc <- future_mapper_template()
+future_mapper_dfc <- function(...) {
+    future_mapper_template("future_mapper_dfc")
+    future_mapper_dfc(...)
+}
 
 #' future_invoke_mapper_dfr
 #' @rdname future_mapper_dfr
 #' @export
-future_mapper_dfr <- future_mapper_template()
+future_mapper_dfr <- function(...) {
+    future_mapper_template("future_mapper_dfr")
+    future_mapper_dfr(...)
+}
 
 #' future_invoke_mapper_int
 #' @rdname future_mapper_int
 #' @export
-future_mapper_int <- future_mapper_template()
+future_mapper_int <- function(...) {
+    future_mapper_template("future_mapper_int")
+    future_mapper_int(...)
+}
 
 #' future_invoke_mapper_lgl
 #' @rdname future_mapper_lgl
 #' @export
-future_mapper_lgl <- future_mapper_template()
+future_mapper_lgl <- function(...) {
+    future_mapper_template("future_mapper_lgl")
+    future_mapper_lgl(...)
+}
 
 #' future_invoke_mapper_walk
 #' @rdname future_mapper_walk
 #' @export
-future_mapper_walk <- future_mapper_template()
+future_mapper_walk <- function(...) {
+    future_mapper_template("future_mapper_walk")
+    future_mapper_walk(...)
+}
 
 # Example
 # library(tidyverse)
 # library(furrr)
+# # library(mapper)
 # # Remove cache when using furrr:map functions
 # 1:10 %>%
-#   future_mapper(rnorm, n = 10, .options = furrr_options(seed = 1233)) %>%
-#   future_map_dbl(mean)
+#   future_mapper(rnorm, n = 10, .options = furrr_options(seed = 1233))
 
