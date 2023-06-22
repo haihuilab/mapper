@@ -13,7 +13,7 @@
 #' A vector the same length as .x.
 #' future_mapper2_template
 #' @export
-future_mapper2_template <- function(...) {
+future_mapper2_template <- function(arg) {
   map2_list <- c(furrr::future_map2,
                  furrr::future_map2_chr,
                  furrr::future_map2_dbl,
@@ -52,7 +52,7 @@ future_mapper2_template <- function(...) {
     return(output)
   }
 
-  func_list <- map(map2_list, function(i) mapper2_func(i)) %>% stats::setNames(mapper2_list)
+  func_list <- map(map2_list[which(mapper2_list == arg)], function(i) mapper2_func(i)) %>% stats::setNames(arg)
   # Extract the functions as individual ones
   list2env(func_list, envir = .GlobalEnv)
 }
@@ -63,7 +63,7 @@ future_mapper2_template <- function(...) {
 future_mapper2 <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper2_template()
+    future_mapper2_template("future_mapper2")
     flag <- TRUE
   } else {
     future_mapper2(...)
@@ -75,7 +75,7 @@ future_mapper2 <- function(...) {
 future_mapper2_chr <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper2_template()
+    future_mapper2_template("future_mapper2_chr")
     flag <- TRUE
   } else {
     future_mapper2_chr(...)
@@ -87,7 +87,7 @@ future_mapper2_chr <- function(...) {
 future_mapper2_dbl <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper2_template()
+    future_mapper2_template("future_mapper2_dbl")
     flag <- TRUE
   } else {
     future_mapper2_dbl(...)
@@ -99,7 +99,7 @@ future_mapper2_dbl <- function(...) {
 future_mapper2_dfc <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper2_template()
+    future_mapper2_template("future_mapper2_dfc")
     flag <- TRUE
   } else {
     future_mapper2_dfc(...)
@@ -111,7 +111,7 @@ future_mapper2_dfc <- function(...) {
 future_mapper2_dfr <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper2_template()
+    future_mapper2_template("future_mapper2_dfr")
     flag <- TRUE
   } else {
     future_mapper2_dfr(...)
@@ -123,7 +123,7 @@ future_mapper2_dfr <- function(...) {
 future_mapper2_int <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper2_template()
+    future_mapper2_template("future_mapper2_int")
     flag <- TRUE
   } else {
     future_mapper2_int(...)
@@ -135,7 +135,7 @@ future_mapper2_int <- function(...) {
 future_mapper2_lgl <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper2_template()
+    future_mapper2_template("future_mapper2_lgl")
     flag <- TRUE
   } else {
     future_mapper2_lgl(...)
@@ -147,7 +147,7 @@ future_mapper2_lgl <- function(...) {
 future_mapper2_walk2 <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper2_template()
+    future_mapper2_template("future_mapper2_walk2")
     flag <- TRUE
   } else {
     future_mapper2_walk2(...)

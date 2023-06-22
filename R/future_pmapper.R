@@ -13,7 +13,7 @@
 #' A vector the same length as .x.
 #' future_pmapper_template
 #' @export
-future_pmapper_template <- function(...) {
+future_pmapper_template <- function(arg) {
   pmap_list <- c(furrr::future_pmap,
                  furrr::future_pmap_chr,
                  furrr::future_pmap_dbl,
@@ -51,8 +51,7 @@ future_pmapper_template <- function(...) {
     }
     return(output)
   }
-
-  func_list <- map(pmap_list, function(i) pmapper_func(i)) %>% stats::setNames(pmapper_list)
+  func_list <- map(pmap_list[which(pmapper_list == arg)], function(i) pmapper_func(i)) %>% stats::setNames(arg)
   # Extract the functions as individual ones
   list2env(func_list, envir = .GlobalEnv)
 }
@@ -64,7 +63,7 @@ future_pmapper_template <- function(...) {
 future_pmapper <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_pmapper_template()
+    future_pmapper_template("future_pmapper")
     flag <- TRUE
   } else {
     future_pmapper(...)
@@ -76,7 +75,7 @@ future_pmapper <- function(...) {
 future_pmapper_chr <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_pmapper_template()
+    future_pmapper_template("future_pmapper_chr")
     flag <- TRUE
   } else {
     future_pmapper_chr(...)
@@ -88,7 +87,7 @@ future_pmapper_chr <- function(...) {
 future_pmapper_dbl <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_pmapper_template()
+    future_pmapper_template("future_pmapper_dbl")
     flag <- TRUE
   } else {
     future_pmapper_dbl(...)
@@ -100,7 +99,7 @@ future_pmapper_dbl <- function(...) {
 future_pmapper_dfc <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_pmapper_template()
+    future_pmapper_template("future_pmapper_dfc")
     flag <- TRUE
   } else {
     future_pmapper_dfc(...)
@@ -112,7 +111,7 @@ future_pmapper_dfc <- function(...) {
 future_pmapper_dfr <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_pmapper_template()
+    future_pmapper_template("future_pmapper_dfr")
     flag <- TRUE
   } else {
     future_pmapper_dfr(...)
@@ -124,7 +123,7 @@ future_pmapper_dfr <- function(...) {
 future_pmapper_int <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_pmapper_template()
+    future_pmapper_template("future_pmapper_int")
     flag <- TRUE
   } else {
     future_pmapper_int(...)
@@ -136,7 +135,7 @@ future_pmapper_int <- function(...) {
 future_pmapper_lgl <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_pmapper_template()
+    future_pmapper_template("future_pmapper_lgl")
     flag <- TRUE
   } else {
     future_pmapper_lgl(...)
@@ -148,7 +147,7 @@ future_pmapper_lgl <- function(...) {
 future_pmapper_pwalk <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_pmapper_template()
+    future_pmapper_template("future_pmapper_pwalk")
     flag <- TRUE
   } else {
     future_pmapper+pwalk(...)

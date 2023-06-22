@@ -13,7 +13,7 @@
 #' A vector the same length as .x.
 #' future_mapper_template
 #' @export
-future_mapper_template <- function(...) {
+future_mapper_template <- function(arg) {
   map_list <- c(furrr::future_map,
                 furrr::future_map_chr,
                 furrr::future_map_dbl,
@@ -33,7 +33,7 @@ future_mapper_template <- function(...) {
                    "future_mapper_walk")
 
   # map function------------------------
-  map_func <- function(i) {
+  mapper_func <- function(i) {
     inner_func <- i
     output <-  function(...) {
       # Start multicore
@@ -52,7 +52,7 @@ future_mapper_template <- function(...) {
     return(output)
   }
 
-  func_list <- map(map_list, function(i) map_func(i)) %>% stats::setNames(mapper_list)
+  func_list <- map(map_list[which(mapper_list == arg)], function(i) mapper_func(i)) %>% stats::setNames(arg)
   # Extract the functions as individual ones
   list2env(func_list, envir = .GlobalEnv)
 }
@@ -63,11 +63,10 @@ future_mapper_template <- function(...) {
 future_mapper <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper_template()
+    future_mapper_template("future_mapper")
     flag <- TRUE
   } else {
   future_mapper(...)
-  rm(list = ls(pattern = "function"))
   }
 }
 
@@ -77,10 +76,11 @@ future_mapper <- function(...) {
 future_mapper_chr <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper_template()
+    future_mapper_template("future_mapper_chr")
     flag <- TRUE
   } else {
     future_mapper_chr(...)
+
   }
 }
 
@@ -90,7 +90,7 @@ future_mapper_chr <- function(...) {
 future_mapper_dbl <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper_template()
+    future_mapper_template("future_mapper_dbl")
     flag <- TRUE
   } else {
     future_mapper_dbl(...)
@@ -103,7 +103,7 @@ future_mapper_dbl <- function(...) {
 future_mapper_dfc <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper_template()
+    future_mapper_template("future_mapper_dfc")
     flag <- TRUE
   } else {
     future_mapper_dfc(...)
@@ -116,7 +116,7 @@ future_mapper_dfc <- function(...) {
 future_mapper_dfr <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper_template()
+    future_mapper_template("future_mapper_dfr")
     flag <- TRUE
   } else {
     future_mapper+dfr(...)
@@ -129,7 +129,7 @@ future_mapper_dfr <- function(...) {
 future_mapper_int <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper_template()
+    future_mapper_template("future_mapper_int")
     flag <- TRUE
   } else {
     future_mapper_int(...)
@@ -142,7 +142,7 @@ future_mapper_int <- function(...) {
 future_mapper_lgl <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper_template()
+    future_mapper_template("future_mapper_lgl")
     flag <- TRUE
   } else {
     future_mapper_lgl(...)
@@ -155,7 +155,7 @@ future_mapper_lgl <- function(...) {
 future_mapper_walk <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_mapper_template()
+    future_mapper_template("future_mapper_walk")
     flag <- TRUE
   } else {
     future_mapper_walk(...)
@@ -165,7 +165,7 @@ future_mapper_walk <- function(...) {
 # Example
 # library(tidyverse)
 # library(furrr)
-# library(mapper)
+# # library(mapper)
 # # Remove cache when using furrr:map functions
 # 1:10 %>%
 #   future_mapper(rnorm, n = 10, .options = furrr_options(seed = 1233))

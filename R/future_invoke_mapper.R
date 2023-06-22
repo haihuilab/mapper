@@ -13,7 +13,7 @@
 #' A vector the same length as .x.
 #' future_invoke_mapper_template
 #' @export
-future_invoke_mapper_template <- function(...) {
+future_invoke_mapper_template <- function(arg) {
   invoke_map_list <- c(furrr::future_invoke_map,
                        furrr::future_invoke_map_chr,
                        furrr::future_invoke_map_dbl,
@@ -50,7 +50,7 @@ future_invoke_mapper_template <- function(...) {
     return(output)
   }
 
-  func_list <- map(invoke_map_list, function(i) invoke_mapper_func(i)) %>% stats::setNames(invoke_mapper_list)
+  func_list <- map(invoke_map_list[which(invoke_mapper_list == arg)], function(i) invoke_mapper_func(i)) %>% stats::setNames(arg)
   # Extract the functions as individual ones
   list2env(func_list, envir = .GlobalEnv)
 }
@@ -62,7 +62,7 @@ future_invoke_mapper_template <- function(...) {
 future_invoke_mapper <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_invoke_mapper_template()
+    future_invoke_mapper_template("future_invoke_mapper")
     flag <- TRUE
   } else {
     future_invoke_mapper(...)
@@ -75,7 +75,7 @@ future_invoke_mapper <- function(...) {
 future_invoke_mapper_chr <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_invoke_mapper_template()
+    future_invoke_mapper_template("future_invoke_mapper_chr")
     flag <- TRUE
   } else {
     future_invoke_mapper_chr(...)
@@ -88,7 +88,7 @@ future_invoke_mapper_chr <- function(...) {
 future_invoke_mapper_dbl <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_invoke_mapper_template()
+    future_invoke_mapper_template("future_invoke_mapper_dbl")
     flag <- TRUE
   } else {
     future_invoke_mapper_dbl(...)
@@ -101,7 +101,7 @@ future_invoke_mapper_dbl <- function(...) {
 future_invoke_mapper_dfc <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_invoke_mapper_template()
+    future_invoke_mapper_template("future_invoke_mapper_dfc")
     flag <- TRUE
   } else {
     future_invoke_mapper_dfc(...)
@@ -114,7 +114,7 @@ future_invoke_mapper_dfc <- function(...) {
 future_invoke_mapper_dfr <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_invoke_mapper_template()
+    future_invoke_mapper_template("future_invoke_mapper_dfr")
     flag <- TRUE
   } else {
     future_invoke_mapper_dfr(...)
@@ -127,7 +127,7 @@ future_invoke_mapper_dfr <- function(...) {
 future_invoke_mapper_int <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_invoke_mapper_template()
+    future_invoke_mapper_template("future_invoke_mapper_int")
     flag <- TRUE
   } else {
     future_invoke_mapper_int(...)
@@ -140,7 +140,7 @@ future_invoke_mapper_int <- function(...) {
 future_invoke_mapper_lgl <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_invoke_mapper_template()
+    future_invoke_mapper_template("future_invoke_mapper_lgl")
     flag <- TRUE
   } else {
     future_invoke_mapper_lgl(...)

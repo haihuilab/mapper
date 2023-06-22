@@ -15,7 +15,7 @@
 
 #' future_imapper_template
 #' @export
-future_imapper_template <- function(...) {
+future_imapper_template <- function(arg) {
   imap_list <- c(furrr::future_imap,
                  furrr::future_imap_chr,
                  furrr::future_imap_dbl,
@@ -33,7 +33,7 @@ future_imapper_template <- function(...) {
                     "future_imapper_lgl")
 
   # imap function------------------------
-  imap_func <- function(i) {
+  imapper_func <- function(i) {
     inner_func <- i
     output <-  function(...) {
       # Start multicore
@@ -52,7 +52,7 @@ future_imapper_template <- function(...) {
     return(output)
   }
 
-  func_list <- map(imap_list, function(i) imap_func(i)) %>% stats::setNames(imapper_list)
+  func_list <- map(imap_list[which(imapper_list == arg)], function(i) imapper_func(i)) %>% stats::setNames(arg)
   # Extract the functions as individual ones
   list2env(func_list, envir = .GlobalEnv)
 }
@@ -63,7 +63,7 @@ future_imapper_template <- function(...) {
 future_imapper <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_imapper_template()
+    future_imapper_template("future_imapper")
     flag <- TRUE
   } else {
     future_imapper(...)
@@ -77,7 +77,7 @@ future_imapper <- function(...) {
 future_imapper_chr <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_imapper_template()
+    future_imapper_template("future_imapper_chr")
     flag <- TRUE
   } else {
     future_imapper_chr(...)
@@ -90,7 +90,7 @@ future_imapper_chr <- function(...) {
 future_imapper_dbl <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_imapper_template()
+    future_imapper_template("future_imapper_dbl")
     flag <- TRUE
   } else {
     future_imapper_dbl(...)
@@ -103,7 +103,7 @@ future_imapper_dbl <- function(...) {
 future_imapper_dfc <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_imapper_template()
+    future_imapper_template("future_imapper_dfc")
     flag <- TRUE
   } else {
     future_imapper_dfc(...)
@@ -116,7 +116,7 @@ future_imapper_dfc <- function(...) {
 future_imapper_dfr <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_imapper_template()
+    future_imapper_template("future_imapper_dfr")
     flag <- TRUE
   } else {
     future_imapper_dfr(...)
@@ -129,7 +129,7 @@ future_imapper_dfr <- function(...) {
 future_imapper_int <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_imapper_template()
+    future_imapper_template("future_imapper_int")
     flag <- TRUE
   } else {
     future_imapper_int(...)
@@ -142,7 +142,7 @@ future_imapper_int <- function(...) {
 future_imapper_lgl <- function(...) {
   flag <- FALSE
   if (!flag) {
-    future_imapper_template()
+    future_imapper_template("future_imapper_lgl")
     flag <- TRUE
   } else {
     future_imapper_lgl(...)
