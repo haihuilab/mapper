@@ -3,7 +3,7 @@
 #' These functions work exactly the same as [purrr::map2()] functions,
 #' but allow you to map in parallel.
 #'
-#' @inheritParams purrr::map
+#' @inheritParams purrr::map2
 #' @inheritParams furrr::map2
 #' @importFrom magrittr `%>%`
 #'
