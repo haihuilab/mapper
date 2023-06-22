@@ -1,19 +1,19 @@
 #' Apply a function to each element of a vector, and its index via futures
 #'
-#' These functions work exactly the same as [purrr::map2()] functions,
+#' These functions work exactly the same as [purrr::pmap()] functions,
 #' but allow you to map in parallel.
 #'
 #' @inheritParams purrr::map
-#' @inheritParams furrr::map2
+#' @inheritParams furrr::pmap
 #' @importFrom magrittr `%>%`
 #'
 #' @return parameters
 #' @export
 #'
-#' future_mapper2
-#' @rdname future_mapper2
+#' future_pmapper
+#' @rdname future_pmapper
 #' @export
-future_mapper2 <- function(...) {
+future_pmapper <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
@@ -26,10 +26,10 @@ future_mapper2 <- function(...) {
 }
 
 
-#' future_mapper2_chr
-#' @rdname future_mapper2_chr
+#' future_pmapper_chr
+#' @rdname future_pmapper_chr
 #' @export
-future_mapper2_chr <- function(...) {
+future_pmapper_chr <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
@@ -42,10 +42,10 @@ future_mapper2_chr <- function(...) {
 }
 
 
-#' future_mapper2_dbl
-#' @rdname future_mapper2_dbl
+#' future_pmapper_dbl
+#' @rdname future_pmapper_dbl
 #' @export
-future_mapper2_dbl <- function(...) {
+future_pmapper_dbl <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
@@ -58,10 +58,10 @@ future_mapper2_dbl <- function(...) {
 }
 
 
-#' future_mapper2_dfc
-#' @rdname future_mapper2_dfc
+#' future_pmapper_dfc
+#' @rdname future_pmapper_dfc
 #' @export
-future_mapper2_dfc <- function(...) {
+future_pmapper_dfc <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
@@ -74,10 +74,10 @@ future_mapper2_dfc <- function(...) {
 }
 
 
-#' future_mapper2_dfr
-#' @rdname future_mapper2_dfr
+#' future_pmapper_dfr
+#' @rdname future_pmapper_dfr
 #' @export
-future_mapper2_dfr <- function(...) {
+future_pmapper_dfr <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
@@ -90,10 +90,10 @@ future_mapper2_dfr <- function(...) {
 }
 
 
-#' future_mapper2_int
-#' @rdname future_mapper2_int
+#' future_pmapper_int
+#' @rdname future_pmapper_int
 #' @export
-future_mapper2_int <- function(...) {
+future_pmapper_int <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
@@ -106,10 +106,10 @@ future_mapper2_int <- function(...) {
 }
 
 
-#' future_mapper2_lgl
-#' @rdname future_mapper2_lgl
+#' future_pmapper_lgl
+#' @rdname future_pmapper_lgl
 #' @export
-future_mapper2_lgl <- function(...) {
+future_pmapper_lgl <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
@@ -122,15 +122,15 @@ future_mapper2_lgl <- function(...) {
 }
 
 
-#' future_mapper2_walk2
-#' @rdname future_mapper2_walk2
+#' future_pmapper_pwalk
+#' @rdname future_pmapper_wpalk
 #' @export
-future_mapper2_walk2 <- function(...) {
+future_pmapper_pwalk <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
   options(future.globals.maxSize = 5000000000)
   # map function
-  res <- furrr::future_walk2(...)
+  res <- furrr::future_pwalk(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
   gc()
@@ -144,6 +144,6 @@ future_mapper2_walk2 <- function(...) {
 # library(furrr)
 # # Remove cache when using furrr:map functions
 # 1:10 %>%
-#   future_mapper(rnorm, n = 10, .options = furrr_options(seed = 1233)) %>%
+#   future_pmapper(rnorm, n = 10, .options = furrr_options(seed = 1233)) %>%
 #   future_map_dbl(mean)
 
