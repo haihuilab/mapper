@@ -32,14 +32,14 @@ future_mapper_template <- function(arg) {
                    "future_mapper_lgl",
                    "future_mapper_walk")
 
+  # Start multicore
+  future::plan(future::multisession, workers = parallel::detectCores()-2)
+  options(future.globals.maxSize = 5000000000)
+
   # map function------------------------
   mapper_func <- function(i) {
     inner_func <- i
     output <-  function(...) {
-      # Start multicore
-      future::plan(future::multisession, workers = parallel::detectCores()-2)
-      options(future.globals.maxSize = 5000000000)
-
       # map function
       res <- inner_func(...)
 
