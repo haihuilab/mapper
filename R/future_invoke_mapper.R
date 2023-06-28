@@ -22,7 +22,7 @@ future_invoke_mapper <- function(...) {
   res <- furrr::future_invoke_map(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -38,7 +38,7 @@ future_invoke_mapper_chr <- function(...) {
   res <- furrr::future_invoke_map_chr(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -54,7 +54,7 @@ future_invoke_mapper_dbl <- function(...) {
   res <- furrr::future_invoke_map_dbl(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -70,7 +70,7 @@ future_invoke_mapper_dfc <- function(...) {
   res <- furrr::future_invoke_map_dfc(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -86,7 +86,7 @@ future_invoke_mapper_dfr <- function(...) {
   res <- furrr::future_invoke_map_dfr(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -102,7 +102,7 @@ future_invoke_mapper_int <- function(...) {
   res <- furrr::future_invoke_map_int(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -118,7 +118,7 @@ future_invoke_mapper_lgl <- function(...) {
   res <- furrr::future_invoke_map_lgl(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 

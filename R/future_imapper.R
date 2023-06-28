@@ -22,7 +22,7 @@ future_imapper <- function(...) {
   res <- furrr::future_imap(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -38,7 +38,7 @@ future_imapper_chr <- function(...) {
   res <- furrr::future_imap_chr(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -54,7 +54,7 @@ future_imapper_dbl <- function(...) {
   res <- furrr::future_imap_dbl(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -70,7 +70,7 @@ future_imapper_dfc <- function(...) {
   res <- furrr::future_imap_dfc(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -86,7 +86,7 @@ future_imapper_dfr <- function(...) {
   res <- furrr::future_imap_dfr(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -102,7 +102,7 @@ future_imapper_int <- function(...) {
   res <- furrr::future_imap_int(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
@@ -118,7 +118,7 @@ future_imapper_lgl <- function(...) {
   res <- furrr::future_imap_lgl(...)
   # shut down multicore and clear cache
   future::plan(future::sequential)
-
+  gc()
   return(res)
 }
 
