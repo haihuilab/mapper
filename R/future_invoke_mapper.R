@@ -11,13 +11,13 @@
 #' @return parameters
 #' @export
 #'
-#' future_invoke_mapper
-#' @rdname future_invoke_mapper
+#' invoke_mapper
+#' @rdname invoke_mapper
 #' @export
-future_invoke_mapper <- function(...) {
+invoke_mapper <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_invoke_map(...)
   # shut down multicore and clear cache
@@ -27,13 +27,13 @@ future_invoke_mapper <- function(...) {
 }
 
 
-#' future_invoke_mapper_chr
-#' @rdname future_invoke_mapper_chr
+#' invoke_mapper_chr
+#' @rdname invoke_mapper_chr
 #' @export
-future_invoke_mapper_chr <- function(...) {
+invoke_mapper_chr <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_invoke_map_chr(...)
   # shut down multicore and clear cache
@@ -43,13 +43,13 @@ future_invoke_mapper_chr <- function(...) {
 }
 
 
-#' future_invoke_mapper_dbl
-#' @rdname future_invoke_mapper_dbl
+#' invoke_mapper_dbl
+#' @rdname invoke_mapper_dbl
 #' @export
-future_invoke_mapper_dbl <- function(...) {
+invoke_mapper_dbl <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_invoke_map_dbl(...)
   # shut down multicore and clear cache
@@ -59,13 +59,13 @@ future_invoke_mapper_dbl <- function(...) {
 }
 
 
-#' future_invoke_mapper_dfc
-#' @rdname future_invoke_mapper_dfc
+#' invoke_mapper_dfc
+#' @rdname invoke_mapper_dfc
 #' @export
-future_invoke_mapper_dfc <- function(...) {
+invoke_mapper_dfc <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_invoke_map_dfc(...)
   # shut down multicore and clear cache
@@ -75,13 +75,13 @@ future_invoke_mapper_dfc <- function(...) {
 }
 
 
-#' future_invoke_mapper_dfr
-#' @rdname future_invoke_mapper_dfr
+#' invoke_mapper_dfr
+#' @rdname invoke_mapper_dfr
 #' @export
-future_invoke_mapper_dfr <- function(...) {
+invoke_mapper_dfr <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_invoke_map_dfr(...)
   # shut down multicore and clear cache
@@ -91,13 +91,13 @@ future_invoke_mapper_dfr <- function(...) {
 }
 
 
-#' future_invoke_mapper_int
-#' @rdname future_invoke_mapper_int
+#' invoke_mapper_int
+#' @rdname invoke_mapper_int
 #' @export
-future_invoke_mapper_int <- function(...) {
+invoke_mapper_int <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_invoke_map_int(...)
   # shut down multicore and clear cache
@@ -107,13 +107,13 @@ future_invoke_mapper_int <- function(...) {
 }
 
 
-#' future_invoke_mapper_lgl
-#' @rdname future_invoke_mapper_lgl
+#' invoke_mapper_lgl
+#' @rdname invoke_mapper_lgl
 #' @export
-future_invoke_mapper_lgl <- function(...) {
+invoke_mapper_lgl <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_invoke_map_lgl(...)
   # shut down multicore and clear cache
@@ -129,6 +129,6 @@ future_invoke_mapper_lgl <- function(...) {
 # library(furrr)
 # # Remove cache when using furrr:map functions
 # 1:10 %>%
-#   future_invoke_mapper(rnorm, n = 10, .options = furrr_options(seed = 1233)) %>%
+#   invoke_mapper(rnorm, n = 10, .options = furrr_options(seed = 1233)) %>%
 #   future_map_dbl(mean)
 

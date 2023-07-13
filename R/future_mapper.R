@@ -10,13 +10,13 @@
 #' @return parameters
 #' @export
 #'
-#' future_mapper
-#' @rdname future_mapper
+#' mapper
+#' @rdname mapper
 #' @export
-future_mapper <- function(...) {
+mapper <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map(...)
   # shut down multicore and clear cache
@@ -26,13 +26,13 @@ future_mapper <- function(...) {
 }
 
 
-#' future_mapper_chr
-#' @rdname future_mapper_chr
+#' mapper_chr
+#' @rdname mapper_chr
 #' @export
-future_mapper_chr <- function(...) {
+mapper_chr <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_chr(...)
   # shut down multicore and clear cache
@@ -42,13 +42,13 @@ future_mapper_chr <- function(...) {
 }
 
 
-#' future_mapper_dbl
-#' @rdname future_mapper_dbl
+#' mapper_dbl
+#' @rdname mapper_dbl
 #' @export
-future_mapper_dbl <- function(...) {
+mapper_dbl <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_dbl(...)
   # shut down multicore and clear cache
@@ -58,13 +58,13 @@ future_mapper_dbl <- function(...) {
 }
 
 
-#' future_mapper_dfc
-#' @rdname future_mapper_dfc
+#' mapper_dfc
+#' @rdname mapper_dfc
 #' @export
-future_mapper_dfc <- function(...) {
+mapper_dfc <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_dfc(...)
   # shut down multicore and clear cache
@@ -74,13 +74,13 @@ future_mapper_dfc <- function(...) {
 }
 
 
-#' future_mapper_dfr
-#' @rdname future_mapper_dfr
+#' mapper_dfr
+#' @rdname mapper_dfr
 #' @export
-future_mapper_dfr <- function(...) {
+mapper_dfr <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_dfr(...)
   # shut down multicore and clear cache
@@ -90,13 +90,13 @@ future_mapper_dfr <- function(...) {
 }
 
 
-#' future_mapper_int
-#' @rdname future_mapper_int
+#' mapper_int
+#' @rdname mapper_int
 #' @export
-future_mapper_int <- function(...) {
+mapper_int <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_int(...)
   # shut down multicore and clear cache
@@ -106,13 +106,13 @@ future_mapper_int <- function(...) {
 }
 
 
-#' future_mapper_lgl
-#' @rdname future_mapper_lgl
+#' mapper_lgl
+#' @rdname mapper_lgl
 #' @export
-future_mapper_lgl <- function(...) {
+mapper_lgl <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_lgl(...)
   # shut down multicore and clear cache
@@ -122,13 +122,13 @@ future_mapper_lgl <- function(...) {
 }
 
 
-#' future_mapper_walk
-#' @rdname future_mapper_walk
+#' mapper_walk
+#' @rdname mapper_walk
 #' @export
-future_mapper_walk <- function(...) {
+mapper_walk <- function(...) {
   # Start multicore
   future::plan(future::multisession, workers = parallel::detectCores()-2)
-  options(future.globals.maxSize = 5000000000)
+  options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_walk(...)
   # shut down multicore and clear cache
@@ -144,6 +144,6 @@ future_mapper_walk <- function(...) {
 # library(furrr)
 # # Remove cache when using furrr:map functions
 # 1:10 %>%
-#   future_mapper(rnorm, n = 10, .options = furrr_options(seed = 1233)) %>%
+#   mapper(rnorm, n = 10, .options = furrr_options(seed = 1233)) %>%
 #   future_map_dbl(mean)
 
