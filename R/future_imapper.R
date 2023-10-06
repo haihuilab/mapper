@@ -12,7 +12,7 @@
 #' @export
 #'
 #' imapper
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper
 #' @export
 imapper <- function(workers = parallel::detectCores()-2, ...) {
@@ -46,7 +46,7 @@ imapper_chr <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' imapper_dbl
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper_dbl
 #' @export
 imapper_dbl <- function(workers = parallel::detectCores()-2, ...) {
@@ -63,7 +63,7 @@ imapper_dbl <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' imapper_dfc
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper_dfc
 #' @export
 imapper_dfc <- function(workers = parallel::detectCores()-2, ...) {
@@ -80,7 +80,7 @@ imapper_dfc <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' imapper_dfr
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper_dfr
 #' @export
 imapper_dfr <- function(workers = parallel::detectCores()-2, ...) {
@@ -97,7 +97,7 @@ imapper_dfr <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' imapper_int
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper_int
 #' @export
 imapper_int <- function(workers = parallel::detectCores()-2, ...) {
@@ -114,7 +114,7 @@ imapper_int <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' imapper_lgl
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper_lgl
 #' @export
 imapper_lgl <- function(workers = parallel::detectCores()-2, ...) {

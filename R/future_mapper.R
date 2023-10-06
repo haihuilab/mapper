@@ -11,7 +11,7 @@
 #' @export
 #'
 #' mapper
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper
 #' @export
 mapper <- function(workers = parallel::detectCores()-2, ...) {
@@ -28,7 +28,7 @@ mapper <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' mapper_chr
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_chr
 #' @export
 mapper_chr <- function(workers = parallel::detectCores()-2, ...) {
@@ -45,7 +45,7 @@ mapper_chr <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' mapper_dbl
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_dbl
 #' @export
 mapper_dbl <- function(workers = parallel::detectCores()-2, ...) {
@@ -62,7 +62,7 @@ mapper_dbl <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' mapper_dfc
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_dfc
 #' @export
 mapper_dfc <- function(workers = parallel::detectCores()-2, ...) {
@@ -79,7 +79,7 @@ mapper_dfc <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' mapper_dfr
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_dfr
 #' @export
 mapper_dfr <- function(workers = parallel::detectCores()-2, ...) {
@@ -96,7 +96,7 @@ mapper_dfr <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' mapper_int
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_int
 #' @export
 mapper_int <- function(workers = parallel::detectCores()-2, ...) {
@@ -113,7 +113,7 @@ mapper_int <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' mapper_lgl
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_lgl
 #' @export
 mapper_lgl <- function(workers = parallel::detectCores()-2, ...) {
@@ -130,7 +130,7 @@ mapper_lgl <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' mapper_walk
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_walk
 #' @export
 mapper_walk <- function(workers = parallel::detectCores()-2, ...) {

@@ -12,7 +12,7 @@
 #' @export
 #'
 #' invoke_mapper
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname invoke_mapper
 #' @export
 invoke_mapper <- function(workers = parallel::detectCores()-2, ...) {
@@ -29,7 +29,7 @@ invoke_mapper <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' invoke_mapper_chr
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname invoke_mapper_chr
 #' @export
 invoke_mapper_chr <- function(workers = parallel::detectCores()-2, ...) {
@@ -46,7 +46,7 @@ invoke_mapper_chr <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' invoke_mapper_dbl
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname invoke_mapper_dbl
 #' @export
 invoke_mapper_dbl <- function(workers = parallel::detectCores()-2, ...) {
@@ -63,7 +63,7 @@ invoke_mapper_dbl <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' invoke_mapper_dfc
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname invoke_mapper_dfc
 #' @export
 invoke_mapper_dfc <- function(workers = parallel::detectCores()-2, ...) {
@@ -80,7 +80,7 @@ invoke_mapper_dfc <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' invoke_mapper_dfr
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname invoke_mapper_dfr
 #' @export
 invoke_mapper_dfr <- function(workers = parallel::detectCores()-2, ...) {
@@ -97,7 +97,7 @@ invoke_mapper_dfr <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' invoke_mapper_int
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname invoke_mapper_int
 #' @export
 invoke_mapper_int <- function(workers = parallel::detectCores()-2, ...) {
@@ -114,7 +114,7 @@ invoke_mapper_int <- function(workers = parallel::detectCores()-2, ...) {
 
 
 #' invoke_mapper_lgl
-#' @param workers default value is the `total cores - 2`
+#' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname invoke_mapper_lgl
 #' @export
 invoke_mapper_lgl <- function(workers = parallel::detectCores()-2, ...) {
