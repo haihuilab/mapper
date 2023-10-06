@@ -14,7 +14,10 @@
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper
 #' @export
-mapper <- function(workers = (parallelly::availableCores()-2), ...) {
+mapper <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -31,7 +34,10 @@ mapper <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_chr
 #' @export
-mapper_chr <- function(workers = (parallelly::availableCores()-2), ...) {
+mapper_chr <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -48,7 +54,10 @@ mapper_chr <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_dbl
 #' @export
-mapper_dbl <- function(workers = (parallelly::availableCores()-2), ...) {
+mapper_dbl <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -65,7 +74,10 @@ mapper_dbl <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_dfc
 #' @export
-mapper_dfc <- function(workers = (parallelly::availableCores()-2), ...) {
+mapper_dfc <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -82,7 +94,10 @@ mapper_dfc <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_dfr
 #' @export
-mapper_dfr <- function(workers = (parallelly::availableCores()-2), ...) {
+mapper_dfr <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -99,7 +114,10 @@ mapper_dfr <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_int
 #' @export
-mapper_int <- function(workers = (parallelly::availableCores()-2), ...) {
+mapper_int <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -116,7 +134,10 @@ mapper_int <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_lgl
 #' @export
-mapper_lgl <- function(workers = (parallelly::availableCores()-2), ...) {
+mapper_lgl <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -133,7 +154,10 @@ mapper_lgl <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper_walk
 #' @export
-mapper_walk <- function(workers = (parallelly::availableCores()-2), ...) {
+mapper_walk <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)

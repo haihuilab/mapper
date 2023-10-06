@@ -4,7 +4,7 @@
 \alias{imapper_lgl}
 \title{imapper_lgl}
 \usage{
-imapper_lgl(workers = (parallelly::availableCores() - 2), ...)
+imapper_lgl(workers = NULL, ...)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

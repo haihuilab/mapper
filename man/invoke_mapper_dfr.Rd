@@ -4,7 +4,7 @@
 \alias{invoke_mapper_dfr}
 \title{invoke_mapper_dfr}
 \usage{
-invoke_mapper_dfr(workers = (parallelly::availableCores() - 2), ...)
+invoke_mapper_dfr(workers = NULL, ...)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

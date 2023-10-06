@@ -4,7 +4,7 @@
 \alias{imapper_int}
 \title{imapper_int}
 \usage{
-imapper_int(workers = (parallelly::availableCores() - 2), ...)
+imapper_int(workers = NULL, ...)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

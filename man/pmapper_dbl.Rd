@@ -4,7 +4,7 @@
 \alias{pmapper_dbl}
 \title{pmapper_dbl}
 \usage{
-pmapper_dbl(workers = (parallelly::availableCores() - 2), ...)
+pmapper_dbl(workers = NULL, ...)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

@@ -15,7 +15,10 @@
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper
 #' @export
-imapper <- function(workers = (parallelly::availableCores()-2), ...) {
+imapper <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -32,7 +35,10 @@ imapper <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers default value is the `total cores - 2`
 #' @rdname imapper_chr
 #' @export
-imapper_chr <- function(workers = (parallelly::availableCores()-2), ...) {
+imapper_chr <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -49,7 +55,10 @@ imapper_chr <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper_dbl
 #' @export
-imapper_dbl <- function(workers = (parallelly::availableCores()-2), ...) {
+imapper_dbl <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -66,7 +75,10 @@ imapper_dbl <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper_dfc
 #' @export
-imapper_dfc <- function(workers = (parallelly::availableCores()-2), ...) {
+imapper_dfc <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -83,7 +95,10 @@ imapper_dfc <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper_dfr
 #' @export
-imapper_dfr <- function(workers = (parallelly::availableCores()-2), ...) {
+imapper_dfr <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -100,7 +115,10 @@ imapper_dfr <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper_int
 #' @export
-imapper_int <- function(workers = (parallelly::availableCores()-2), ...) {
+imapper_int <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
@@ -117,7 +135,10 @@ imapper_int <- function(workers = (parallelly::availableCores()-2), ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname imapper_lgl
 #' @export
-imapper_lgl <- function(workers = (parallelly::availableCores()-2), ...) {
+imapper_lgl <- function(workers = NULL, ...) {
+  if (is.null(workers)) {
+    workers <- parallelly::availableCores() - 2
+  }
   # Start multicore
   future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)

@@ -4,7 +4,7 @@
 \alias{mapper2}
 \title{Apply a function to each element of a vector, and its index via futures}
 \usage{
-mapper2(workers = (parallelly::availableCores() - 2), ...)
+mapper2(workers = NULL, ...)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

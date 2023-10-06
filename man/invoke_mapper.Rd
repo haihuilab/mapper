@@ -4,7 +4,7 @@
 \alias{invoke_mapper}
 \title{Apply a function to each element of a vector, and its index via futures}
 \usage{
-invoke_mapper(workers = (parallelly::availableCores() - 2), ...)
+invoke_mapper(workers = NULL, ...)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

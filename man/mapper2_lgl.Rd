@@ -4,7 +4,7 @@
 \alias{mapper2_lgl}
 \title{mapper2_lgl}
 \usage{
-mapper2_lgl(workers = (parallelly::availableCores() - 2), ...)
+mapper2_lgl(workers = NULL, ...)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

@@ -4,7 +4,7 @@
 \alias{mapper2_chr}
 \title{mapper2_chr}
 \usage{
-mapper2_chr(workers = (parallelly::availableCores() - 2), ...)
+mapper2_chr(workers = NULL, ...)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

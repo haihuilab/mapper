@@ -4,7 +4,7 @@
 \alias{mapper_walk}
 \title{mapper_walk}
 \usage{
-mapper_walk(workers = (parallelly::availableCores() - 2), ...)
+mapper_walk(workers = NULL, ...)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}
