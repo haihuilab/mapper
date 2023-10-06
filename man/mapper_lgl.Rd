@@ -4,7 +4,10 @@
 \alias{mapper_lgl}
 \title{mapper_lgl}
 \usage{
-mapper_lgl(...)
+mapper_lgl(workers = parallel::detectCores() - 2, ...)
+}
+\arguments{
+\item{workers}{default value is the \verb{total cores - 2}}
 }
 \description{
 mapper_lgl

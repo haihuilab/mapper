@@ -4,7 +4,10 @@
 \alias{imapper_dfr}
 \title{imapper_dfr}
 \usage{
-imapper_dfr(...)
+imapper_dfr(workers = parallel::detectCores() - 2, ...)
+}
+\arguments{
+\item{workers}{default value is the \verb{total cores - 2}}
 }
 \description{
 imapper_dfr

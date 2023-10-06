@@ -4,7 +4,10 @@
 \alias{imapper_lgl}
 \title{imapper_lgl}
 \usage{
-imapper_lgl(...)
+imapper_lgl(workers = parallel::detectCores() - 2, ...)
+}
+\arguments{
+\item{workers}{default value is the \verb{total cores - 2}}
 }
 \description{
 imapper_lgl

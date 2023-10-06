@@ -11,11 +11,12 @@
 #' @export
 #'
 #' mapper
+#' @param workers default value is the `total cores - 2`
 #' @rdname mapper
 #' @export
-mapper <- function(...) {
+mapper <- function(workers = parallel::detectCores()-2, ...) {
   # Start multicore
-  future::plan(future::multisession, workers = parallel::detectCores()-2)
+  future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map(...)
@@ -27,11 +28,12 @@ mapper <- function(...) {
 
 
 #' mapper_chr
+#' @param workers default value is the `total cores - 2`
 #' @rdname mapper_chr
 #' @export
-mapper_chr <- function(...) {
+mapper_chr <- function(workers = parallel::detectCores()-2, ...) {
   # Start multicore
-  future::plan(future::multisession, workers = parallel::detectCores()-2)
+  future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_chr(...)
@@ -43,11 +45,12 @@ mapper_chr <- function(...) {
 
 
 #' mapper_dbl
+#' @param workers default value is the `total cores - 2`
 #' @rdname mapper_dbl
 #' @export
-mapper_dbl <- function(...) {
+mapper_dbl <- function(workers = parallel::detectCores()-2, ...) {
   # Start multicore
-  future::plan(future::multisession, workers = parallel::detectCores()-2)
+  future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_dbl(...)
@@ -59,11 +62,12 @@ mapper_dbl <- function(...) {
 
 
 #' mapper_dfc
+#' @param workers default value is the `total cores - 2`
 #' @rdname mapper_dfc
 #' @export
-mapper_dfc <- function(...) {
+mapper_dfc <- function(workers = parallel::detectCores()-2, ...) {
   # Start multicore
-  future::plan(future::multisession, workers = parallel::detectCores()-2)
+  future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_dfc(...)
@@ -75,11 +79,12 @@ mapper_dfc <- function(...) {
 
 
 #' mapper_dfr
+#' @param workers default value is the `total cores - 2`
 #' @rdname mapper_dfr
 #' @export
-mapper_dfr <- function(...) {
+mapper_dfr <- function(workers = parallel::detectCores()-2, ...) {
   # Start multicore
-  future::plan(future::multisession, workers = parallel::detectCores()-2)
+  future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_dfr(...)
@@ -91,11 +96,12 @@ mapper_dfr <- function(...) {
 
 
 #' mapper_int
+#' @param workers default value is the `total cores - 2`
 #' @rdname mapper_int
 #' @export
-mapper_int <- function(...) {
+mapper_int <- function(workers = parallel::detectCores()-2, ...) {
   # Start multicore
-  future::plan(future::multisession, workers = parallel::detectCores()-2)
+  future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_int(...)
@@ -107,11 +113,12 @@ mapper_int <- function(...) {
 
 
 #' mapper_lgl
+#' @param workers default value is the `total cores - 2`
 #' @rdname mapper_lgl
 #' @export
-mapper_lgl <- function(...) {
+mapper_lgl <- function(workers = parallel::detectCores()-2, ...) {
   # Start multicore
-  future::plan(future::multisession, workers = parallel::detectCores()-2)
+  future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_map_lgl(...)
@@ -123,11 +130,12 @@ mapper_lgl <- function(...) {
 
 
 #' mapper_walk
+#' @param workers default value is the `total cores - 2`
 #' @rdname mapper_walk
 #' @export
-mapper_walk <- function(...) {
+mapper_walk <- function(workers = parallel::detectCores()-2, ...) {
   # Start multicore
-  future::plan(future::multisession, workers = parallel::detectCores()-2)
+  future::plan(future::multisession, workers = workers)
   options(future.globals.maxSize = 5e9)
   # map function
   res <- furrr::future_walk(...)

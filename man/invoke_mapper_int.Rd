@@ -4,7 +4,10 @@
 \alias{invoke_mapper_int}
 \title{invoke_mapper_int}
 \usage{
-invoke_mapper_int(...)
+invoke_mapper_int(workers = parallel::detectCores() - 2, ...)
+}
+\arguments{
+\item{workers}{default value is the \verb{total cores - 2}}
 }
 \description{
 invoke_mapper_int

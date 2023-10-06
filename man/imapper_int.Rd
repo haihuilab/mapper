@@ -4,7 +4,10 @@
 \alias{imapper_int}
 \title{imapper_int}
 \usage{
-imapper_int(...)
+imapper_int(workers = parallel::detectCores() - 2, ...)
+}
+\arguments{
+\item{workers}{default value is the \verb{total cores - 2}}
 }
 \description{
 imapper_int

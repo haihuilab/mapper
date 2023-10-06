@@ -4,7 +4,10 @@
 \alias{mapper_dfc}
 \title{mapper_dfc}
 \usage{
-mapper_dfc(...)
+mapper_dfc(workers = parallel::detectCores() - 2, ...)
+}
+\arguments{
+\item{workers}{default value is the \verb{total cores - 2}}
 }
 \description{
 mapper_dfc

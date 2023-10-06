@@ -4,7 +4,10 @@
 \alias{mapper2_dbl}
 \title{mapper2_dbl}
 \usage{
-mapper2_dbl(...)
+mapper2_dbl(workers = parallel::detectCores() - 2, ...)
+}
+\arguments{
+\item{workers}{default value is the \verb{total cores - 2}}
 }
 \description{
 mapper2_dbl

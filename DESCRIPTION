@@ -1,5 +1,5 @@
 Package: mapper
-Title: Using furrr map functions in parallel and removing cache
+Title: Use furrr map functions in parallel and remove cache
 Version: 1.0.1
 Authors@R: 
     person("Haihui", "Zhang", , "hanfei19@gmail.com", role = c("aut", "cre"),

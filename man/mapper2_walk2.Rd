@@ -4,7 +4,10 @@
 \alias{mapper2_walk2}
 \title{mapper2_walk2}
 \usage{
-mapper2_walk2(...)
+mapper2_walk2(workers = parallel::detectCores() - 2, ...)
+}
+\arguments{
+\item{workers}{default value is the \verb{total cores - 2}}
 }
 \description{
 mapper2_walk2

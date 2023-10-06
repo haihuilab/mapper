@@ -4,9 +4,11 @@
 \alias{mapper2}
 \title{Apply a function to each element of a vector, and its index via futures}
 \usage{
-mapper2(...)
+mapper2(workers = parallel::detectCores() - 2, ...)
 }
 \arguments{
+\item{workers}{default value is the \verb{total cores - 2}}
+
 \item{...}{Additional arguments passed on to the mapped function.
 
 We now generally recommend against using \code{...} to pass additional

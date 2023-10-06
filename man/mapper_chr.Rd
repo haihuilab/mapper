@@ -4,7 +4,10 @@
 \alias{mapper_chr}
 \title{mapper_chr}
 \usage{
-mapper_chr(...)
+mapper_chr(workers = parallel::detectCores() - 2, ...)
+}
+\arguments{
+\item{workers}{default value is the \verb{total cores - 2}}
 }
 \description{
 mapper_chr
