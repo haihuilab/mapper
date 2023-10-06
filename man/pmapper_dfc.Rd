@@ -4,10 +4,10 @@
 \alias{pmapper_dfc}
 \title{pmapper_dfc}
 \usage{
-pmapper_dfc(workers = parallel::detectCores() - 2, ...)
+pmapper_dfc(workers = (parallelly::availableCores() - 2), ...)
 }
 \arguments{
-\item{workers}{default value is the \verb{total cores - 2}}
+\item{workers}{multicore numbers: default value is the \verb{total cores - 2}}
 }
 \description{
 pmapper_dfc

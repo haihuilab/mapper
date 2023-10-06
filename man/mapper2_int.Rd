@@ -4,10 +4,10 @@
 \alias{mapper2_int}
 \title{mapper2_int}
 \usage{
-mapper2_int(workers = parallel::detectCores() - 2, ...)
+mapper2_int(workers = (parallelly::availableCores() - 2), ...)
 }
 \arguments{
-\item{workers}{default value is the \verb{total cores - 2}}
+\item{workers}{multicore numbers: default value is the \verb{total cores - 2}}
 }
 \description{
 mapper2_int

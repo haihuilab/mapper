@@ -4,10 +4,10 @@
 \alias{invoke_mapper_dbl}
 \title{invoke_mapper_dbl}
 \usage{
-invoke_mapper_dbl(workers = parallel::detectCores() - 2, ...)
+invoke_mapper_dbl(workers = (parallelly::availableCores() - 2), ...)
 }
 \arguments{
-\item{workers}{default value is the \verb{total cores - 2}}
+\item{workers}{multicore numbers: default value is the \verb{total cores - 2}}
 }
 \description{
 invoke_mapper_dbl

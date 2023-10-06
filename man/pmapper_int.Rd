@@ -4,10 +4,10 @@
 \alias{pmapper_int}
 \title{pmapper_int}
 \usage{
-pmapper_int(workers = parallel::detectCores() - 2, ...)
+pmapper_int(workers = (parallelly::availableCores() - 2), ...)
 }
 \arguments{
-\item{workers}{default value is the \verb{total cores - 2}}
+\item{workers}{multicore numbers: default value is the \verb{total cores - 2}}
 }
 \description{
 pmapper_int

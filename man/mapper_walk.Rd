@@ -4,10 +4,10 @@
 \alias{mapper_walk}
 \title{mapper_walk}
 \usage{
-mapper_walk(workers = parallel::detectCores() - 2, ...)
+mapper_walk(workers = (parallelly::availableCores() - 2), ...)
 }
 \arguments{
-\item{workers}{default value is the \verb{total cores - 2}}
+\item{workers}{multicore numbers: default value is the \verb{total cores - 2}}
 }
 \description{
 mapper_walk
