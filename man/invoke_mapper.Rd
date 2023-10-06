@@ -4,12 +4,12 @@
 \alias{invoke_mapper}
 \title{Apply a function to each element of a vector, and its index via futures}
 \usage{
-invoke_mapper(workers = NULL, ...)
+invoke_mapper(..., workers = NULL)
 }
 \arguments{
-\item{workers}{multicore numbers: default value is the \verb{total cores - 2}}
-
 \item{...}{Additional arguments passed to each function.}
+
+\item{workers}{multicore numbers: default value is the \verb{total cores - 2}}
 }
 \value{
 parameters

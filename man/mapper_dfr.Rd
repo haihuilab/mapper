@@ -4,7 +4,7 @@
 \alias{mapper_dfr}
 \title{mapper_dfr}
 \usage{
-mapper_dfr(workers = NULL, ...)
+mapper_dfr(..., workers = NULL)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

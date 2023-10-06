@@ -4,7 +4,7 @@
 \alias{invoke_mapper_lgl}
 \title{invoke_mapper_lgl}
 \usage{
-invoke_mapper_lgl(workers = NULL, ...)
+invoke_mapper_lgl(..., workers = NULL)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

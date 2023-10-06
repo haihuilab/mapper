@@ -4,7 +4,7 @@
 \alias{mapper2_dbl}
 \title{mapper2_dbl}
 \usage{
-mapper2_dbl(workers = NULL, ...)
+mapper2_dbl(..., workers = NULL)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

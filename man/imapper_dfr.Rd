@@ -4,7 +4,7 @@
 \alias{imapper_dfr}
 \title{imapper_dfr}
 \usage{
-imapper_dfr(workers = NULL, ...)
+imapper_dfr(..., workers = NULL)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

@@ -4,7 +4,7 @@
 \alias{pmapper_pwalk}
 \title{pmapper_pwalk}
 \usage{
-pmapper_pwalk(workers = NULL, ...)
+pmapper_pwalk(..., workers = NULL)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

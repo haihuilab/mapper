@@ -4,7 +4,7 @@
 \alias{invoke_mapper_int}
 \title{invoke_mapper_int}
 \usage{
-invoke_mapper_int(workers = NULL, ...)
+invoke_mapper_int(..., workers = NULL)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}

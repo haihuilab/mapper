@@ -14,13 +14,14 @@
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper2
 #' @export
-mapper2 <- function(workers = NULL, ...) {
+mapper2 <- function(..., workers = NULL) {
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
+    # Start multicore
+    future::plan(future::multisession, workers = workers)
+    options(future.globals.maxSize = 5e9)
   }
-  # Start multicore
-  future::plan(future::multisession, workers = workers)
-  options(future.globals.maxSize = 5e9)
+
   # map function
   res <- furrr::future_map2(...)
   # shut down multicore and clear cache
@@ -34,13 +35,14 @@ mapper2 <- function(workers = NULL, ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper2_chr
 #' @export
-mapper2_chr <- function(workers = NULL, ...) {
+mapper2_chr <- function(..., workers = NULL) {
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
+    # Start multicore
+    future::plan(future::multisession, workers = workers)
+    options(future.globals.maxSize = 5e9)
   }
-  # Start multicore
-  future::plan(future::multisession, workers = workers)
-  options(future.globals.maxSize = 5e9)
+
   # map function
   res <- furrr::future_map2_chr(...)
   # shut down multicore and clear cache
@@ -54,13 +56,14 @@ mapper2_chr <- function(workers = NULL, ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper2_dbl
 #' @export
-mapper2_dbl <- function(workers = NULL, ...) {
+mapper2_dbl <- function(..., workers = NULL) {
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
+    # Start multicore
+    future::plan(future::multisession, workers = workers)
+    options(future.globals.maxSize = 5e9)
   }
-  # Start multicore
-  future::plan(future::multisession, workers = workers)
-  options(future.globals.maxSize = 5e9)
+
   # map function
   res <- furrr::future_map2_dbl(...)
   # shut down multicore and clear cache
@@ -74,13 +77,14 @@ mapper2_dbl <- function(workers = NULL, ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper2_dfc
 #' @export
-mapper2_dfc <- function(workers = NULL, ...) {
+mapper2_dfc <- function(..., workers = NULL) {
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
+    # Start multicore
+    future::plan(future::multisession, workers = workers)
+    options(future.globals.maxSize = 5e9)
   }
-  # Start multicore
-  future::plan(future::multisession, workers = workers)
-  options(future.globals.maxSize = 5e9)
+
   # map function
   res <- furrr::future_map2_dfc(...)
   # shut down multicore and clear cache
@@ -94,13 +98,14 @@ mapper2_dfc <- function(workers = NULL, ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper2_dfr
 #' @export
-mapper2_dfr <- function(workers = NULL, ...) {
+mapper2_dfr <- function(..., workers = NULL) {
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
+    # Start multicore
+    future::plan(future::multisession, workers = workers)
+    options(future.globals.maxSize = 5e9)
   }
-  # Start multicore
-  future::plan(future::multisession, workers = workers)
-  options(future.globals.maxSize = 5e9)
+
   # map function
   res <- furrr::future_map2_dfr(...)
   # shut down multicore and clear cache
@@ -114,13 +119,14 @@ mapper2_dfr <- function(workers = NULL, ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper2_int
 #' @export
-mapper2_int <- function(workers = NULL, ...) {
+mapper2_int <- function(..., workers = NULL) {
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
+    # Start multicore
+    future::plan(future::multisession, workers = workers)
+    options(future.globals.maxSize = 5e9)
   }
-  # Start multicore
-  future::plan(future::multisession, workers = workers)
-  options(future.globals.maxSize = 5e9)
+
   # map function
   res <- furrr::future_map2_int(...)
   # shut down multicore and clear cache
@@ -134,13 +140,14 @@ mapper2_int <- function(workers = NULL, ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper2_lgl
 #' @export
-mapper2_lgl <- function(workers = NULL, ...) {
+mapper2_lgl <- function(..., workers = NULL) {
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
+    # Start multicore
+    future::plan(future::multisession, workers = workers)
+    options(future.globals.maxSize = 5e9)
   }
-  # Start multicore
-  future::plan(future::multisession, workers = workers)
-  options(future.globals.maxSize = 5e9)
+
   # map function
   res <- furrr::future_map2_lgl(...)
   # shut down multicore and clear cache
@@ -154,13 +161,14 @@ mapper2_lgl <- function(workers = NULL, ...) {
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper2_walk2
 #' @export
-mapper2_walk2 <- function(workers = NULL, ...) {
+mapper2_walk2 <- function(..., workers = NULL) {
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
+    # Start multicore
+    future::plan(future::multisession, workers = workers)
+    options(future.globals.maxSize = 5e9)
   }
-  # Start multicore
-  future::plan(future::multisession, workers = workers)
-  options(future.globals.maxSize = 5e9)
+
   # map function
   res <- furrr::future_walk2(...)
   # shut down multicore and clear cache

@@ -4,11 +4,9 @@
 \alias{imapper}
 \title{Apply a function to each element of a vector, and its index via futures}
 \usage{
-imapper(workers = NULL, ...)
+imapper(..., workers = NULL)
 }
 \arguments{
-\item{workers}{multicore numbers: default value is the \verb{total cores - 2}}
-
 \item{...}{Additional arguments passed on to the mapped function.
 
 We now generally recommend against using \code{...} to pass additional
@@ -22,6 +20,8 @@ x |> map(\\(x) f(x, 1, 2, collapse = ","))
 
 This makes it easier to understand which arguments belong to which
 function and will tend to yield better error messages.}
+
+\item{workers}{multicore numbers: default value is the \verb{total cores - 2}}
 }
 \value{
 parameters

@@ -4,7 +4,7 @@
 \alias{invoke_mapper_chr}
 \title{invoke_mapper_chr}
 \usage{
-invoke_mapper_chr(workers = NULL, ...)
+invoke_mapper_chr(..., workers = NULL)
 }
 \arguments{
 \item{workers}{multicore numbers: default value is the \verb{total cores - 2}}
