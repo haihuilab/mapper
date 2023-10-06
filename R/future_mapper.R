@@ -14,7 +14,7 @@
 #' @param workers multicore numbers: default value is the `total cores - 2`
 #' @rdname mapper
 #' @export
-mapper1 <- function(..., workers = NULL) {
+mapper <- function(..., workers = NULL) {
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
     # Start multicore
