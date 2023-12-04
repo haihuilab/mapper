@@ -15,12 +15,13 @@
 #' @rdname pmapper
 #' @export
 pmapper <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_pmap(...)
@@ -36,12 +37,13 @@ pmapper <- function(..., workers = NULL) {
 #' @rdname pmapper_chr
 #' @export
 pmapper_chr <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_pmap_chr(...)
@@ -57,12 +59,13 @@ pmapper_chr <- function(..., workers = NULL) {
 #' @rdname pmapper_dbl
 #' @export
 pmapper_dbl <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_pmap_dbl(...)
@@ -78,12 +81,13 @@ pmapper_dbl <- function(..., workers = NULL) {
 #' @rdname pmapper_dfc
 #' @export
 pmapper_dfc <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_pmap_dfc(...)
@@ -99,12 +103,13 @@ pmapper_dfc <- function(..., workers = NULL) {
 #' @rdname pmapper_dfr
 #' @export
 pmapper_dfr <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_pmap_dfr(...)
@@ -120,12 +125,13 @@ pmapper_dfr <- function(..., workers = NULL) {
 #' @rdname pmapper_int
 #' @export
 pmapper_int <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_pmap_int(...)
@@ -141,12 +147,13 @@ pmapper_int <- function(..., workers = NULL) {
 #' @rdname pmapper_lgl
 #' @export
 pmapper_lgl <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_pmap_lgl(...)
@@ -162,12 +169,13 @@ pmapper_lgl <- function(..., workers = NULL) {
 #' @rdname pmapper_wpalk
 #' @export
 pmapper_pwalk <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_pwalk(...)

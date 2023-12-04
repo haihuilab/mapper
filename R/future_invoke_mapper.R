@@ -16,12 +16,13 @@
 #' @rdname invoke_mapper
 #' @export
 invoke_mapper <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_invoke_map(...)
@@ -37,12 +38,13 @@ invoke_mapper <- function(..., workers = NULL) {
 #' @rdname invoke_mapper_chr
 #' @export
 invoke_mapper_chr <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_invoke_map_chr(...)
@@ -58,12 +60,13 @@ invoke_mapper_chr <- function(..., workers = NULL) {
 #' @rdname invoke_mapper_dbl
 #' @export
 invoke_mapper_dbl <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_invoke_map_dbl(...)
@@ -79,12 +82,13 @@ invoke_mapper_dbl <- function(..., workers = NULL) {
 #' @rdname invoke_mapper_dfc
 #' @export
 invoke_mapper_dfc <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_invoke_map_dfc(...)
@@ -100,12 +104,13 @@ invoke_mapper_dfc <- function(..., workers = NULL) {
 #' @rdname invoke_mapper_dfr
 #' @export
 invoke_mapper_dfr <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_invoke_map_dfr(...)
@@ -121,12 +126,13 @@ invoke_mapper_dfr <- function(..., workers = NULL) {
 #' @rdname invoke_mapper_int
 #' @export
 invoke_mapper_int <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_invoke_map_int(...)
@@ -142,12 +148,13 @@ invoke_mapper_int <- function(..., workers = NULL) {
 #' @rdname invoke_mapper_lgl
 #' @export
 invoke_mapper_lgl <- function(..., workers = NULL) {
+
   if (is.null(workers)) {
     workers <- parallelly::availableCores() - 2
-    # Start multicore
-    future::plan(future::multisession, workers = workers)
-    options(future.globals.maxSize = 5e9)
   }
+  # Start multicore
+  options(future.globals.maxSize = 5e9)
+  future::plan(future::multisession, workers = workers)
 
   # map function
   res <- furrr::future_invoke_map_lgl(...)
