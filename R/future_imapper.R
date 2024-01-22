@@ -21,7 +21,7 @@ imapper <- function(..., workers = NULL) {
     workers <- parallelly::availableCores() - 2
   }
   # Start multicore
-  options(future.globals.maxSize = 5e9)
+  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -43,7 +43,7 @@ imapper_chr <- function(..., workers = NULL) {
     workers <- parallelly::availableCores() - 2
   }
   # Start multicore
-  options(future.globals.maxSize = 5e9)
+  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -65,7 +65,7 @@ imapper_dbl <- function(..., workers = NULL) {
     workers <- parallelly::availableCores() - 2
   }
   # Start multicore
-  options(future.globals.maxSize = 5e9)
+  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -87,7 +87,7 @@ imapper_dfc <- function(..., workers = NULL) {
     workers <- parallelly::availableCores() - 2
   }
   # Start multicore
-  options(future.globals.maxSize = 5e9)
+  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -109,7 +109,7 @@ imapper_dfr <- function(..., workers = NULL) {
     workers <- parallelly::availableCores() - 2
   }
   # Start multicore
-  options(future.globals.maxSize = 5e9)
+  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -131,7 +131,7 @@ imapper_int <- function(..., workers = NULL) {
     workers <- parallelly::availableCores() - 2
   }
   # Start multicore
-  options(future.globals.maxSize = 5e9)
+  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -153,7 +153,7 @@ imapper_lgl <- function(..., workers = NULL) {
     workers <- parallelly::availableCores() - 2
   }
   # Start multicore
-  options(future.globals.maxSize = 5e9)
+  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
