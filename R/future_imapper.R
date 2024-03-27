@@ -18,7 +18,10 @@
 imapper <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
-    workers <- parallelly::availableCores() - 2
+    workers <- parallelly::availableCores(omit = 2)
+    if (as.numeric(workers) <= 1) {
+      workers <- parallel::detectCores()
+    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -40,7 +43,10 @@ imapper <- function(..., workers = NULL) {
 imapper_chr <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
-    workers <- parallelly::availableCores() - 2
+    workers <- parallelly::availableCores(omit = 2)
+    if (as.numeric(workers) <= 1) {
+      workers <- parallel::detectCores()
+    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -62,7 +68,10 @@ imapper_chr <- function(..., workers = NULL) {
 imapper_dbl <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
-    workers <- parallelly::availableCores() - 2
+    workers <- parallelly::availableCores(omit = 2)
+    if (as.numeric(workers) <= 1) {
+      workers <- parallel::detectCores()
+    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -84,7 +93,10 @@ imapper_dbl <- function(..., workers = NULL) {
 imapper_dfc <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
-    workers <- parallelly::availableCores() - 2
+    workers <- parallelly::availableCores(omit = 2)
+    if (as.numeric(workers) <= 1) {
+      workers <- parallel::detectCores()
+    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -106,7 +118,10 @@ imapper_dfc <- function(..., workers = NULL) {
 imapper_dfr <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
-    workers <- parallelly::availableCores() - 2
+    workers <- parallelly::availableCores(omit = 2)
+    if (as.numeric(workers) <= 1) {
+      workers <- parallel::detectCores()
+    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -128,7 +143,10 @@ imapper_dfr <- function(..., workers = NULL) {
 imapper_int <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
-    workers <- parallelly::availableCores() - 2
+    workers <- parallelly::availableCores(omit = 2)
+    if (as.numeric(workers) <= 1) {
+      workers <- parallel::detectCores()
+    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -150,7 +168,10 @@ imapper_int <- function(..., workers = NULL) {
 imapper_lgl <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
-    workers <- parallelly::availableCores() - 2
+    workers <- parallelly::availableCores(omit = 2)
+    if (as.numeric(workers) <= 1) {
+      workers <- parallel::detectCores()
+    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
