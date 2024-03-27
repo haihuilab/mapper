@@ -18,9 +18,6 @@ mapper2 <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
     workers <- parallelly::availableCores(omit = 2)
-    if (as.numeric(workers) <= 1) {
-      workers <- parallel::detectCores()
-    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -43,9 +40,6 @@ mapper2_chr <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
     workers <- parallelly::availableCores(omit = 2)
-    if (as.numeric(workers) <= 1) {
-      workers <- parallel::detectCores()
-    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -68,9 +62,6 @@ mapper2_dbl <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
     workers <- parallelly::availableCores(omit = 2)
-    if (as.numeric(workers) <= 1) {
-      workers <- parallel::detectCores()
-    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -93,9 +84,6 @@ mapper2_dfc <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
     workers <- parallelly::availableCores(omit = 2)
-    if (as.numeric(workers) <= 1) {
-      workers <- parallel::detectCores()
-    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -118,9 +106,6 @@ mapper2_dfr <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
     workers <- parallelly::availableCores(omit = 2)
-    if (as.numeric(workers) <= 1) {
-      workers <- parallel::detectCores()
-    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -143,9 +128,6 @@ mapper2_int <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
     workers <- parallelly::availableCores(omit = 2)
-    if (as.numeric(workers) <= 1) {
-      workers <- parallel::detectCores()
-    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -168,9 +150,6 @@ mapper2_lgl <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
     workers <- parallelly::availableCores(omit = 2)
-    if (as.numeric(workers) <= 1) {
-      workers <- parallel::detectCores()
-    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
@@ -193,9 +172,6 @@ mapper2_walk2 <- function(..., workers = NULL) {
 
   if (is.null(workers)) {
     workers <- parallelly::availableCores(omit = 2)
-    if (as.numeric(workers) <= 1) {
-      workers <- parallel::detectCores()
-    }
   }
   # Start multicore
   options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
