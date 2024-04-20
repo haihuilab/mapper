@@ -20,7 +20,7 @@ mapper <- function(..., workers = NULL) {
     workers <- parallelly::availableCores(omit = 2)
   }
   # Start multicore
-  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
+  options(future.rng.onMisuse = "ignore", future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -42,7 +42,7 @@ mapper_chr <- function(..., workers = NULL) {
     workers <- parallelly::availableCores(omit = 2)
   }
   # Start multicore
-  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
+  options(future.rng.onMisuse = "ignore", future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -64,7 +64,7 @@ mapper_dbl <- function(..., workers = NULL) {
     workers <- parallelly::availableCores(omit = 2)
   }
   # Start multicore
-  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
+  options(future.rng.onMisuse = "ignore", future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -86,7 +86,7 @@ mapper_dfc <- function(..., workers = NULL) {
     workers <- parallelly::availableCores(omit = 2)
   }
   # Start multicore
-  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
+  options(future.rng.onMisuse = "ignore", future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -108,7 +108,7 @@ mapper_dfr <- function(..., workers = NULL) {
     workers <- parallelly::availableCores(omit = 2)
   }
   # Start multicore
-  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
+  options(future.rng.onMisuse = "ignore", future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -130,7 +130,7 @@ mapper_int <- function(..., workers = NULL) {
     workers <- parallelly::availableCores(omit = 2)
   }
   # Start multicore
-  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
+  options(future.rng.onMisuse = "ignore", future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -152,7 +152,7 @@ mapper_lgl <- function(..., workers = NULL) {
     workers <- parallelly::availableCores(omit = 2)
   }
   # Start multicore
-  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
+  options(future.rng.onMisuse = "ignore", future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
@@ -174,7 +174,7 @@ mapper_walk <- function(..., workers = NULL) {
     workers <- parallelly::availableCores(omit = 2)
   }
   # Start multicore
-  options(future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
+  options(future.rng.onMisuse = "ignore", future.globals.maxSize = 100 * 1024^3)  # Set to 100 GiB
   future::plan(future::multisession, workers = workers)
 
   # map function
