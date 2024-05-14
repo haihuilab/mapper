@@ -29,7 +29,7 @@ devtools::install_github("haihuilab/mapper")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to use `mapper` functions:
 
 ``` r
 ## basic example code
