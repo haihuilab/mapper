@@ -9,6 +9,11 @@
 * Checking individual file sizes... OK
 * Checking biocViews... OK
 * Checking that biocViews are present... OK
+* Checking package type based on biocViews... OK
+* Checking for non-trivial biocViews... OK
+* Checking that biocViews come from the same category... OK
+* Checking biocViews validity... OK
+* Checking for recommended biocViews... OK
 * Checking build system compatibility... OK
 * Checking for blank lines in DESCRIPTION... OK
 * Checking if DESCRIPTION is well formatted... OK
@@ -30,9 +35,6 @@
 * Checking for stray BiocCheck output folders... OK
 * Checking for inst/doc folders... OK
 * Checking vignette directory...
-* WARNING: Package listed as VignetteEngine or VignetteBuilder but not currently Suggested. 
-Add the following to Suggests in DESCRIPTION:
-knitr
 * WARNING: Evaluate more vignette chunks.
 * NOTE:  'sessionInfo' not found in vignette(s)
 Missing from file(s):
@@ -50,14 +52,14 @@ vignettes/vignette.Rmd
   https://contributions.bioconductor.org/tests.html
 * Checking skip_on_bioc() in tests... OK
 * Checking formatting of DESCRIPTION, NAMESPACE, man pages, R source, and vignette source...
-* NOTE: Consider shorter lines; 5 lines (10%) are > 80 characters long.
+* NOTE: Consider shorter lines; 5 lines (9%) are > 80 characters long.
 First few lines:
 vignettes/vignette.Rmd#L5 title: "mapper: A wrapper of `purrr` and ...
 vignettes/vignette.Rmd#L15 # A wrapper of `purrr` and `furrr` packa ...
 vignettes/vignette.Rmd#L16 ## You just need to change `map` functio ...
 vignettes/vignette.Rmd#L21 The goal of mapper is to using furrr map ...
 vignettes/vignette.Rmd#L43 # mapper: default cores are total cores  ...
-* NOTE: Consider multiples of 4 spaces for line indents; 4 lines (8%) are not.
+* NOTE: Consider multiples of 4 spaces for line indents; 4 lines (7%) are not.
 First few lines:
 vignettes/vignette.Rmd#L45   map(rnorm, n = 10) ...
 vignettes/vignette.Rmd#L48   mapper(rnorm, n = 10, workers = 2) ...
@@ -69,8 +71,3 @@ vignettes/vignette.Rmd#L53   future_mapper_dbl(mean, workers = 4) ...
 * NOTE: Cannot determine whether maintainer is subscribed to the Bioc-Devel mailing list (requires admin credentials). Subscribe here: https://stat.ethz.ch/mailman/listinfo/bioc-devel
 * Checking for support site registration...
 * ERROR: Add package to Watched Tags in your Support Site profile; visit https://support.bioconductor.org/accounts/edit/profile
-* Checking package type based on biocViews... OK
-* Checking for non-trivial biocViews... OK
-* Checking that biocViews come from the same category... OK
-* Checking biocViews validity... OK
-* Checking for recommended biocViews... OK
