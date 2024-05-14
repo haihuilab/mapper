@@ -31,7 +31,7 @@ library(mapper)
   map(rnorm, n = 10)
 # mapper: default cores are total cores minus 2 for parallel calculation, you can change the cores by setting `workers=<num>`
 1:10 |>
-  mapper(rnorm, n = 10, workers = 2)
+  mapper(rnorm, n = 10)
 
 # Remove cache when using furrr:map functions
 1:10 %>%
