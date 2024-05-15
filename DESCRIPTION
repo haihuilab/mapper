@@ -1,13 +1,20 @@
 Package: mapper
 Title: A wrapper of `purrr` and `furrr` packages for easy parallel mapping in R (mapper)
 Version: 0.99.0
+<<<<<<< HEAD
 Maintainer: Haihui Zhang <zhanghaihui@pku.edu.cn>
+=======
+>>>>>>> 24e163b (“version_0.99.0”)
 Authors@R: 
     person("Haihui", "Zhang", , "zhanghaihui@pku.edu.cn", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0006-4619-4500"))
 Description: You just need to change `map` function to `mapper` function (and also other mapping functions) for parallel calculation.
 License: MIT + file LICENSE
+<<<<<<< HEAD
 VignetteBuilder: rmarkdown
+=======
+VignetteBuilder: knitr
+>>>>>>> 24e163b (“version_0.99.0”)
 biocViews: Software, StatisticalMethod, Visualization
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -17,7 +24,15 @@ Imports:
     future,
     magrittr,
     parallel,
+<<<<<<< HEAD
     purrr
 Suggests: 
+=======
+    purrr,
+    rmarkdown
+Suggests: 
+    knitr,
+    rmarkdown,
+>>>>>>> 24e163b (“version_0.99.0”)
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
