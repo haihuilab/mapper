@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-^mapper\.Rproj$
-^\.Rproj\.user$
-^LICENSE\.md$
-=======
-^.*\.Rproj$
-^\.Rproj\.user$
->>>>>>> 24e163b (“version_0.99.0”)
