@@ -16,7 +16,7 @@ Imports:
     furrr,
     purrr,
     future,
-    magrittr    
+    magrittr,
     parallel    
 Suggests: 
     knitr,
