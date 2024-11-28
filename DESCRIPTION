@@ -11,13 +11,13 @@ VignetteBuilder: rmarkdown
 biocViews: Software, StatisticalMethod, Visualization
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Imports: 
     furrr,
+    purrr,
     future,
-    magrittr,
-    parallel,
-    purrr
+    magrittr    
+    parallel    
 Suggests: 
     knitr,
     rmarkdown,
